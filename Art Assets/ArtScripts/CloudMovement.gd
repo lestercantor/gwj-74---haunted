@@ -7,6 +7,6 @@ extends ParallaxLayer
 
 
 
-func _process(delta) -> void:
+func _process(_delta) -> void:
 	self.motion_offset.x += CloudSpeedx
 	self.motion_offset.y += CloudSpeedy

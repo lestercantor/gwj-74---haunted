@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bpepuwinvt7xm"]
+[gd_scene load_steps=10 format=3 uid="uid://bpepuwinvt7xm"]
 
+[ext_resource type="PackedScene" uid="uid://bpdn4qiyiuosk" path="res://Art Assets/Art Scenes/Mainmenu.tscn" id="1_0liqq"]
 [ext_resource type="Script" path="res://Art Assets/ArtScripts/CloudMovement.gd" id="1_4ih0m"]
 [ext_resource type="Texture2D" uid="uid://bjeonby6l21pm" path="res://Art Assets/Backgrounds/HighCloudLayer.png" id="2_jkf1k"]
 [ext_resource type="Texture2D" uid="uid://8jgj76as3b0p" path="res://Art Assets/Backgrounds/Moon.png" id="2_mq54q"]
@@ -7,8 +8,21 @@
 [ext_resource type="Texture2D" uid="uid://7ygbx7c156t5" path="res://Art Assets/Backgrounds/ForegroundCloudLayer.png" id="4_1ifbp"]
 [ext_resource type="Texture2D" uid="uid://ckmqq1vxtwkhn" path="res://Art Assets/Backgrounds/Logo.png" id="5_3g11h"]
 [ext_resource type="Texture2D" uid="uid://ssnyyu2g1vsk" path="res://Art Assets/Backgrounds/RainLayer.png" id="6_m5tty"]
+[ext_resource type="Texture2D" uid="uid://dj4vgm6rxrhvd" path="res://Art Assets/Backgrounds/Castle.png" id="7_iiesl"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="Menu" parent="CanvasLayer" instance=ExtResource("1_0liqq")]
+anchor_left = 0.046
+anchor_right = 0.164
+anchor_bottom = 0.673
+offset_left = 18.008
+offset_top = 335.0
+offset_right = -117.928
+offset_bottom = -101.104
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -59,31 +73,21 @@ position = Vector2(289, 101)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_mq54q")
 
+[node name="Castle" type="Sprite2D" parent="Camera2D/ParallaxBackground/SkyLayer"]
+position = Vector2(576, 324)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("7_iiesl")
+
 [node name="RainLayer1" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
 z_index = 1
 motion_mirroring = Vector2(1152, 648)
 script = ExtResource("1_4ih0m")
-CloudSpeedx = 2.0
-CloudSpeedy = 10.0
+CloudSpeedx = 3.0
+CloudSpeedy = 9.0
 
 [node name="RainLayer" type="Sprite2D" parent="Camera2D/ParallaxBackground/RainLayer1"]
 modulate = Color(1, 1, 1, 0.152941)
 position = Vector2(576, 324)
 scale = Vector2(1.8, 1.8)
-skew = -0.261799
+skew = -0.349066
 texture = ExtResource("6_m5tty")
-
-[node name="RainLayer 2" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
-z_index = 1
-motion_mirroring = Vector2(1152, 648)
-script = ExtResource("1_4ih0m")
-CloudSpeedx = 3.0
-CloudSpeedy = 7.0
-
-[node name="RainLayer" type="Sprite2D" parent="Camera2D/ParallaxBackground/RainLayer 2"]
-modulate = Color(1, 1, 1, 0.129412)
-position = Vector2(576, 324)
-scale = Vector2(1.8, 1.8)
-skew = -0.261799
-texture = ExtResource("6_m5tty")
-offset = Vector2(31.97, 9.355)

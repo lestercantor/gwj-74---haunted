@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpdn4qiyiuosk"]
+
+[ext_resource type="Script" path="res://Art Assets/ArtScripts/mainmenu.gd" id="1_0o6a6"]
+[ext_resource type="FontFile" uid="uid://bcab12gimgui0" path="res://Art Assets/Fonts/OldLondon.ttf" id="1_3l4ce"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchor_right = 0.098
+anchor_bottom = 0.164
+offset_right = 0.103996
+offset_bottom = -0.272003
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0o6a6")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+clip_contents = true
+layout_mode = 0
+offset_right = 106.0
+offset_bottom = 100.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="StartGameButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_3l4ce")
+theme_override_font_sizes/font_size = 50
+text = "Start"
+flat = true
+
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_3l4ce")
+theme_override_font_sizes/font_size = 50
+text = "Quit
+"
+flat = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
