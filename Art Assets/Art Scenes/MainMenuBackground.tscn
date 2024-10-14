@@ -13,7 +13,6 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 10
 
 [node name="Menu" parent="CanvasLayer" instance=ExtResource("1_0liqq")]
 anchor_left = 0.046

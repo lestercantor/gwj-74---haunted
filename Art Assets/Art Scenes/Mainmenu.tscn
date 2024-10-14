@@ -13,30 +13,29 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0o6a6")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-clip_contents = true
-layout_mode = 0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
 offset_right = 106.0
 offset_bottom = 100.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
 size_flags_horizontal = 0
+theme_override_constants/separation = 15
 
-[node name="StartGameButton" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="StartGameButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_3l4ce")
 theme_override_font_sizes/font_size = 50
 text = "Start"
 flat = true
+alignment = 0
 
-[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_3l4ce")
 theme_override_font_sizes/font_size = 50
 text = "Quit
 "
 flat = true
+alignment = 0
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
