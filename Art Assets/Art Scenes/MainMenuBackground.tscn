@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bpepuwinvt7xm"]
+[gd_scene load_steps=11 format=3 uid="uid://bpepuwinvt7xm"]
 
 [ext_resource type="PackedScene" uid="uid://bpdn4qiyiuosk" path="res://Art Assets/Art Scenes/Mainmenu.tscn" id="1_0liqq"]
 [ext_resource type="Script" path="res://Art Assets/ArtScripts/CloudMovement.gd" id="1_4ih0m"]
+[ext_resource type="AudioStream" uid="uid://cmfu28uuswd7y" path="res://Art Assets/Audio/RainLoop.wav" id="1_bh1n1"]
 [ext_resource type="Texture2D" uid="uid://bjeonby6l21pm" path="res://Art Assets/Backgrounds/HighCloudLayer.png" id="2_jkf1k"]
 [ext_resource type="Texture2D" uid="uid://8jgj76as3b0p" path="res://Art Assets/Backgrounds/Moon.png" id="2_mq54q"]
 [ext_resource type="Texture2D" uid="uid://bl8u62w18ljtg" path="res://Art Assets/Backgrounds/GloomySkyBackground.png" id="3_v5tdo"]
@@ -11,6 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://dj4vgm6rxrhvd" path="res://Art Assets/Backgrounds/Castle.png" id="7_iiesl"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_bh1n1")
+volume_db = -25.0
+autoplay = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -68,6 +74,7 @@ scale = Vector2(1.8, 1.8)
 texture = ExtResource("3_v5tdo")
 
 [node name="Moon" type="Sprite2D" parent="Camera2D/ParallaxBackground/SkyLayer"]
+z_index = 1
 position = Vector2(289, 101)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_mq54q")
