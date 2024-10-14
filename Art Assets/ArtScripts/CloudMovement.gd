@@ -1,7 +1,7 @@
 extends ParallaxLayer
 
 
-export(float) var CloudSpeed = -15
+@export var CloudSpeed: float = -0.01
 
 
 
