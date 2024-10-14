@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://datyn7j67bbd7"]
+
+[ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_gpxii"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fb34a"]
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_gpxii")
+
+[node name="EnemyCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_fb34a")

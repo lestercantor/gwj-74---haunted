@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b10rb71mdahsd"]
+[gd_scene load_steps=4 format=3 uid="uid://b10rb71mdahsd"]
 
 [ext_resource type="PackedScene" uid="uid://hhnak10g0byc" path="res://Player/player.tscn" id="1_rgvpv"]
+[ext_resource type="PackedScene" uid="uid://datyn7j67bbd7" path="res://Enemy/enemy.tscn" id="2_tosly"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2okn2"]
 distance = -136.0
@@ -15,3 +16,6 @@ shape = SubResource("WorldBoundaryShape2D_2okn2")
 
 [node name="Player" parent="." instance=ExtResource("1_rgvpv")]
 position = Vector2(74, -39)
+
+[node name="Enemy" parent="." instance=ExtResource("2_tosly")]
+position = Vector2(191, 173)
