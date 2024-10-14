@@ -61,25 +61,29 @@ texture = ExtResource("2_mq54q")
 
 [node name="RainLayer1" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
 z_index = 1
-motion_mirroring = Vector2(0, 648)
+motion_mirroring = Vector2(1152, 648)
 script = ExtResource("1_4ih0m")
-CloudSpeedy = 20.0
+CloudSpeedx = 2.0
+CloudSpeedy = 10.0
 
 [node name="RainLayer" type="Sprite2D" parent="Camera2D/ParallaxBackground/RainLayer1"]
 modulate = Color(1, 1, 1, 0.152941)
 position = Vector2(576, 324)
 scale = Vector2(1.8, 1.8)
+skew = -0.261799
 texture = ExtResource("6_m5tty")
 
 [node name="RainLayer 2" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
 z_index = 1
-motion_mirroring = Vector2(0, 648)
+motion_mirroring = Vector2(1152, 648)
 script = ExtResource("1_4ih0m")
-CloudSpeedy = 15.0
+CloudSpeedx = 3.0
+CloudSpeedy = 7.0
 
 [node name="RainLayer" type="Sprite2D" parent="Camera2D/ParallaxBackground/RainLayer 2"]
 modulate = Color(1, 1, 1, 0.129412)
 position = Vector2(576, 324)
 scale = Vector2(1.8, 1.8)
+skew = -0.261799
 texture = ExtResource("6_m5tty")
 offset = Vector2(31.97, 9.355)
