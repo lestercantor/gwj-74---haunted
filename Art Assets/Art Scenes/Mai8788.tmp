@@ -16,7 +16,6 @@ anchor_mode = 0
 z_index = 2
 motion_mirroring = Vector2(1152, 0)
 script = ExtResource("1_4ih0m")
-CloudSpeed = -0.5
 
 [node name="HighCloudLayer" type="Sprite2D" parent="Camera2D/ParallaxBackground/ParallaxLayer"]
 z_index = 2
@@ -27,9 +26,6 @@ texture = ExtResource("2_jkf1k")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
 z_index = 3
-motion_mirroring = Vector2(1152, 0)
-script = ExtResource("1_4ih0m")
-CloudSpeed = 0.25
 
 [node name="ForegroundCloudLayer" type="Sprite2D" parent="Camera2D/ParallaxBackground/ParallaxLayer2"]
 z_index = 3
