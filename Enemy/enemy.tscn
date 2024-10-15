@@ -1,13 +1,40 @@
-[gd_scene load_steps=3 format=3 uid="uid://datyn7j67bbd7"]
+[gd_scene load_steps=6 format=3 uid="uid://datyn7j67bbd7"]
 
 [ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_gpxii"]
+[ext_resource type="Script" path="res://Enemy/detection_range.gd" id="2_ni1g3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qd42i"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fb34a"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_owpkq"]
+radius = 16.2063
+height = 54.7944
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_gpxii")
 
+[node name="FlipDirection" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="FlipDirection"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FlipDirection/Area2D"]
+position = Vector2(108, -71)
+shape = SubResource("RectangleShape2D_qd42i")
+
 [node name="EnemyCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_fb34a")
+
+[node name="DetectionRange" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_ni1g3")
+
+[node name="DetectionCollision" type="CollisionShape2D" parent="DetectionRange"]
+scale = Vector2(18.9433, 1.095)
+shape = SubResource("CapsuleShape2D_owpkq")
+
+[connection signal="body_entered" from="DetectionRange" to="DetectionRange" method="_on_body_entered"]
+[connection signal="body_exited" from="DetectionRange" to="DetectionRange" method="_on_body_exited"]
