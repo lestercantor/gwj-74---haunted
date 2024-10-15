@@ -10,14 +10,14 @@
 [ext_resource type="Texture2D" uid="uid://ckmqq1vxtwkhn" path="res://Art Assets/UI/Logo.png" id="5_3g11h"]
 [ext_resource type="Texture2D" uid="uid://ssnyyu2g1vsk" path="res://Art Assets/Backgrounds/RainLayer.png" id="6_m5tty"]
 [ext_resource type="Texture2D" uid="uid://dj4vgm6rxrhvd" path="res://Art Assets/Backgrounds/Castle.png" id="7_iiesl"]
-[ext_resource type="PackedScene" uid="uid://3ctt5ma2xwd5" path="res://Art Assets/Art Scenes/LightningScene.tscn" id="11_4ecw4"]
+[ext_resource type="PackedScene" path="res://Art Assets/Art Scenes/LightningScene.tscn" id="11_4ecw4"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_bh1n1")
-volume_db = -25.0
 autoplay = true
+bus = &"Sound Effects"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
