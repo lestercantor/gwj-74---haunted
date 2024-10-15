@@ -1,11 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://hhnak10g0byc"]
+[gd_scene load_steps=7 format=3 uid="uid://hhnak10g0byc"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_et4br"]
+[ext_resource type="Script" path="res://Player/Mouse_Light.gd" id="2_bq8rw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wd64w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gyku4"]
 radius = 15.0333
+
+[sub_resource type="Gradient" id="Gradient_abqlj"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3akqv"]
+gradient = SubResource("Gradient_abqlj")
+fill = 1
+fill_from = Vector2(1, 0)
+fill_to = Vector2(0, 0)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -21,3 +30,10 @@ collision_mask = 4
 
 [node name="DeathCollision" type="CollisionShape2D" parent="DeathArea2D"]
 shape = SubResource("CircleShape2D_gyku4")
+
+[node name="MouseLight" type="Node2D" parent="." node_paths=PackedStringArray("light")]
+script = ExtResource("2_bq8rw")
+light = NodePath("PointLight2D")
+
+[node name="PointLight2D" type="PointLight2D" parent="MouseLight"]
+texture = SubResource("GradientTexture2D_3akqv")

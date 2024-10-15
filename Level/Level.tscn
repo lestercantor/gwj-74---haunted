@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://w5vlxb805s64"]
+[gd_scene load_steps=8 format=3 uid="uid://w5vlxb805s64"]
 
 [ext_resource type="Texture2D" uid="uid://jvhgrw0muibq" path="res://Art Assets/Tilesets/CastleTileset.png" id="1_76u6i"]
 [ext_resource type="PackedScene" uid="uid://hhnak10g0byc" path="res://Player/player.tscn" id="2_othsh"]
@@ -58,18 +58,6 @@ occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_gs6dd")
 
-[sub_resource type="Gradient" id="Gradient_s58y5"]
-offsets = PackedFloat32Array(0, 0.683486)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_48vup"]
-gradient = SubResource("Gradient_s58y5")
-width = 128
-height = 128
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-metadata/_snap_enabled = true
-
 [node name="Node2D" type="Node2D"]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -90,12 +78,5 @@ layer_1/tile_data = PackedInt32Array(589824, 131072, 1, 589825, 131072, 1, 58982
 
 [node name="Player" parent="." instance=ExtResource("2_othsh")]
 position = Vector2(264, 560)
-
-[node name="PointLight2D" type="PointLight2D" parent="Player"]
-scale = Vector2(3, 3)
-color = Color(1, 0.47451, 0, 0.839216)
-energy = 2.0
-shadow_color = Color(0, 0, 0, 1)
-texture = SubResource("GradientTexture2D_48vup")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
