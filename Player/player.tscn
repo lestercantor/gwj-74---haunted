@@ -9,11 +9,13 @@
 radius = 15.0333
 
 [sub_resource type="Gradient" id="Gradient_abqlj"]
+offsets = PackedFloat32Array(0, 0.752294)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_3akqv"]
 gradient = SubResource("Gradient_abqlj")
 fill = 1
-fill_from = Vector2(1, 0)
+fill_from = Vector2(0.512821, 0.495726)
 fill_to = Vector2(0, 0)
 
 [node name="Player" type="CharacterBody2D"]
@@ -37,3 +39,4 @@ light = NodePath("PointLight2D")
 
 [node name="PointLight2D" type="PointLight2D" parent="MouseLight"]
 texture = SubResource("GradientTexture2D_3akqv")
+texture_scale = 3.0
