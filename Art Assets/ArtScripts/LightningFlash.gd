@@ -5,7 +5,7 @@ extends Node2D
 func _ready() -> void:
 	$Sprite2D.hide()
 	randomize()
-	$Sprite2D/Timer.wait_time = randi_range(1,10)
+	$Sprite2D/Timer.wait_time = randi_range(4,10)
 
 
 func _on_timer_timeout() -> void:
