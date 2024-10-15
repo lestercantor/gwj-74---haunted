@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://w5vlxb805s64"]
+[gd_scene load_steps=9 format=3 uid="uid://w5vlxb805s64"]
 
 [ext_resource type="Texture2D" uid="uid://jvhgrw0muibq" path="res://Art Assets/Tilesets/CastleTileset.png" id="1_76u6i"]
 [ext_resource type="PackedScene" uid="uid://hhnak10g0byc" path="res://Player/player.tscn" id="2_othsh"]
+[ext_resource type="PackedScene" uid="uid://datyn7j67bbd7" path="res://Enemy/enemy.tscn" id="3_iw6pf"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ey5pb"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -80,3 +81,6 @@ layer_1/tile_data = PackedInt32Array(589824, 131072, 1, 589825, 131072, 1, 58982
 position = Vector2(264, 560)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Enemy" parent="." instance=ExtResource("3_iw6pf")]
+position = Vector2(201, 560)

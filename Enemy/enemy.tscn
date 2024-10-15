@@ -1,7 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://datyn7j67bbd7"]
+[gd_scene load_steps=9 format=3 uid="uid://datyn7j67bbd7"]
 
 [ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_gpxii"]
+[ext_resource type="Texture2D" uid="uid://vx00p2oaldfj" path="res://Art Assets/Enemy/Enemy-Sheet.png" id="2_kflnl"]
 [ext_resource type="Script" path="res://Enemy/detection_range.gd" id="2_ni1g3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysfc0"]
+atlas = ExtResource("2_kflnl")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdboi"]
+atlas = ExtResource("2_kflnl")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wpm1w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysfc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdboi")
+}],
+"loop": true,
+"name": &"Main",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fb34a"]
 
@@ -12,6 +35,12 @@ radius = 143.087
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_gpxii")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.607843)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_wpm1w")
+animation = &"Main"
 
 [node name="FlipDirection" type="Node2D" parent="."]
 
