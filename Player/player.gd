@@ -30,4 +30,5 @@ func _physics_process(delta: float) -> void:
 	
 # Call function when player has collided with enemy
 func enemy_collision(enemy: Enemy) -> void:
+	if not enemy is Enemy: return
 	print("player got killed by enemy")
