@@ -14,8 +14,8 @@ distance = -136.0
 position = Vector2(110, 76)
 shape = SubResource("WorldBoundaryShape2D_2okn2")
 
-[node name="Player" parent="." instance=ExtResource("1_rgvpv")]
-position = Vector2(74, -39)
-
 [node name="Enemy" parent="." instance=ExtResource("2_tosly")]
 position = Vector2(191, 173)
+
+[node name="Player" parent="." instance=ExtResource("1_rgvpv")]
+position = Vector2(250, 17)
