@@ -38,5 +38,6 @@ script = ExtResource("2_bq8rw")
 light = NodePath("PointLight2D")
 
 [node name="PointLight2D" type="PointLight2D" parent="MouseLight"]
+color = Color(0.82235, 0.579043, 0.355313, 1)
 texture = SubResource("GradientTexture2D_3akqv")
 texture_scale = 3.0
