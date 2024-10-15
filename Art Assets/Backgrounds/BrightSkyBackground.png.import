@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuqdfto1wff86"
-path="res://.godot/imported/Castle.png-6a6396582c1df86e8f60c71f91f6f83e.ctex"
+uid="uid://deh0a2seeqkx5"
+path="res://.godot/imported/BrightSkyBackground.png-4907aa8a12df0ba46399532b871d2172.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/Art Scenes/Castle.png"
-dest_files=["res://.godot/imported/Castle.png-6a6396582c1df86e8f60c71f91f6f83e.ctex"]
+source_file="res://Art Assets/Backgrounds/BrightSkyBackground.png"
+dest_files=["res://.godot/imported/BrightSkyBackground.png-4907aa8a12df0ba46399532b871d2172.ctex"]
 
 [params]
 

@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ckmqq1vxtwkhn" path="res://Art Assets/UI/Logo.png" id="5_3g11h"]
 [ext_resource type="Texture2D" uid="uid://ssnyyu2g1vsk" path="res://Art Assets/Backgrounds/RainLayer.png" id="6_m5tty"]
 [ext_resource type="Texture2D" uid="uid://dj4vgm6rxrhvd" path="res://Art Assets/Backgrounds/Castle.png" id="7_iiesl"]
-[ext_resource type="PackedScene" uid="uid://3ctt5ma2xwd5" path="res://Art Assets/Art Scenes/LightningScened.tscn" id="11_4ecw4"]
+[ext_resource type="PackedScene" uid="uid://3ctt5ma2xwd5" path="res://Art Assets/Art Scenes/LightningScene.tscn" id="11_4ecw4"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -73,6 +73,7 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_mq54q")
 
 [node name="Castle" type="Sprite2D" parent="ParallaxBackground/SkyLayer"]
+z_index = 1
 position = Vector2(640, 360)
 scale = Vector2(2, 2)
 texture = ExtResource("7_iiesl")
@@ -91,11 +92,24 @@ scale = Vector2(1.8, 1.8)
 skew = -0.349066
 texture = ExtResource("6_m5tty")
 
+[node name="Lightning" parent="ParallaxBackground" instance=ExtResource("11_4ecw4")]
+modulate = Color(1, 1, 0.670588, 1)
+position = Vector2(615, 199)
+TimerLength = 1.0
+
+[node name="Lightning2" parent="ParallaxBackground" instance=ExtResource("11_4ecw4")]
+modulate = Color(1, 1, 0.670588, 1)
+position = Vector2(1085, 183)
+
+[node name="Lightning3" parent="ParallaxBackground" instance=ExtResource("11_4ecw4")]
+modulate = Color(1, 1, 0.670588, 1)
+z_index = 1
+position = Vector2(951, 292)
+scale = Vector2(2, 2)
+TimerLength = 3.0
+
 [node name="Logo" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(251, 249)
 scale = Vector2(2, 2)
 texture = ExtResource("5_3g11h")
-
-[node name="Node2D" parent="." instance=ExtResource("11_4ecw4")]
-position = Vector2(634, 208)
