@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bpepuwinvt7xm"]
+[gd_scene load_steps=12 format=3 uid="uid://bpepuwinvt7xm"]
 
 [ext_resource type="PackedScene" uid="uid://bpdn4qiyiuosk" path="res://Art Assets/Art Scenes/Mainmenu.tscn" id="1_0liqq"]
 [ext_resource type="Script" path="res://Art Assets/ArtScripts/CloudMovement.gd" id="1_4ih0m"]
@@ -7,9 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://8jgj76as3b0p" path="res://Art Assets/Backgrounds/Moon.png" id="2_mq54q"]
 [ext_resource type="Texture2D" uid="uid://bl8u62w18ljtg" path="res://Art Assets/Backgrounds/GloomySkyBackground.png" id="3_v5tdo"]
 [ext_resource type="Texture2D" uid="uid://7ygbx7c156t5" path="res://Art Assets/Backgrounds/ForegroundCloudLayer.png" id="4_1ifbp"]
-[ext_resource type="Texture2D" uid="uid://ckmqq1vxtwkhn" path="res://Art Assets/Backgrounds/Logo.png" id="5_3g11h"]
+[ext_resource type="Texture2D" uid="uid://ckmqq1vxtwkhn" path="res://Art Assets/UI/Logo.png" id="5_3g11h"]
 [ext_resource type="Texture2D" uid="uid://ssnyyu2g1vsk" path="res://Art Assets/Backgrounds/RainLayer.png" id="6_m5tty"]
 [ext_resource type="Texture2D" uid="uid://dj4vgm6rxrhvd" path="res://Art Assets/Backgrounds/Castle.png" id="7_iiesl"]
+[ext_resource type="PackedScene" uid="uid://3ctt5ma2xwd5" path="res://Art Assets/Art Scenes/LightningScened.tscn" id="11_4ecw4"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -21,13 +22,14 @@ autoplay = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Menu" parent="CanvasLayer" instance=ExtResource("1_0liqq")]
+custom_minimum_size = Vector2(250, 250)
 anchor_left = 0.046
 anchor_right = 0.164
 anchor_bottom = 0.673
-offset_left = 18.008
-offset_top = 335.0
-offset_right = -117.928
-offset_bottom = -101.104
+offset_left = -14.88
+offset_top = 314.0
+offset_right = 84.08
+offset_bottom = 79.44
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -91,9 +93,9 @@ texture = ExtResource("6_m5tty")
 
 [node name="Logo" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(199, 249)
+position = Vector2(251, 249)
 scale = Vector2(2, 2)
 texture = ExtResource("5_3g11h")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
+[node name="Node2D" parent="." instance=ExtResource("11_4ecw4")]
+position = Vector2(634, 208)
