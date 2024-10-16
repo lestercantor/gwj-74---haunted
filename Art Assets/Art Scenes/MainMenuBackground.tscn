@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bpepuwinvt7xm"]
+[gd_scene load_steps=14 format=3 uid="uid://bpepuwinvt7xm"]
 
 [ext_resource type="PackedScene" uid="uid://bpdn4qiyiuosk" path="res://Art Assets/Art Scenes/Mainmenu.tscn" id="1_0liqq"]
 [ext_resource type="Script" path="res://Art Assets/ArtScripts/CloudMovement.gd" id="1_4ih0m"]
@@ -10,7 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://ckmqq1vxtwkhn" path="res://Art Assets/UI/Logo.png" id="5_3g11h"]
 [ext_resource type="Texture2D" uid="uid://ssnyyu2g1vsk" path="res://Art Assets/Backgrounds/RainLayer.png" id="6_m5tty"]
 [ext_resource type="Texture2D" uid="uid://dj4vgm6rxrhvd" path="res://Art Assets/Backgrounds/Castle.png" id="7_iiesl"]
+[ext_resource type="Texture2D" uid="uid://dghu7dylu5vqm" path="res://Art Assets/Backgrounds/CastleTileset_n2.png" id="9_kmx8p"]
 [ext_resource type="PackedScene" uid="uid://3ctt5ma2xwd5" path="res://Art Assets/Art Scenes/LightningScene.tscn" id="11_4ecw4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_txidj"]
+diffuse_texture = ExtResource("7_iiesl")
+normal_texture = ExtResource("9_kmx8p")
 
 [node name="Node2D2" type="Node2D"]
 
@@ -76,7 +81,7 @@ texture = ExtResource("2_mq54q")
 z_index = 1
 position = Vector2(640, 360)
 scale = Vector2(2, 2)
-texture = ExtResource("7_iiesl")
+texture = SubResource("CanvasTexture_txidj")
 
 [node name="RainLayer1" type="ParallaxLayer" parent="ParallaxBackground"]
 z_index = 1
