@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://w5vlxb805s64"]
+[gd_scene load_steps=10 format=3 uid="uid://w5vlxb805s64"]
 
 [ext_resource type="Texture2D" uid="uid://jvhgrw0muibq" path="res://Art Assets/Tilesets/CastleTileset.png" id="1_76u6i"]
+[ext_resource type="Texture2D" uid="uid://hrm4bxxj1278" path="res://Art Assets/Backgrounds/CastleTileset_n.png" id="2_kl17q"]
 [ext_resource type="PackedScene" uid="uid://hhnak10g0byc" path="res://Player/player.tscn" id="2_othsh"]
-[ext_resource type="Texture2D" uid="uid://bcb8e65vmslkc" path="res://Art Assets/Tilesets/CastleTileset_n.png" id="2_vbn3i"]
+[ext_resource type="PackedScene" uid="uid://datyn7j67bbd7" path="res://Enemy/enemy.tscn" id="4_kgrqc"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_um8ss"]
 diffuse_texture = ExtResource("1_76u6i")
-normal_texture = ExtResource("2_vbn3i")
+normal_texture = ExtResource("2_kl17q")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gs6dd"]
 texture = SubResource("CanvasTexture_um8ss")
@@ -54,7 +55,7 @@ texture = SubResource("CanvasTexture_um8ss")
 7:0/next_alternative_id = 2
 7:0/0 = 0
 7:0/1 = 1
-7:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+7:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, -8, 8, 8, 8, 8, 0)
 8:0/0 = 0
 9:0/next_alternative_id = 2
 9:0/0 = 0
@@ -85,8 +86,8 @@ scale = Vector2(3, 3)
 color = Color(0.0846899, 0.0846899, 0.0846899, 1)
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(0, 192)
-scale = Vector2(3, 3)
+position = Vector2(0, 416)
+scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_i7m5u")
 format = 2
 layer_0/name = "Background"
@@ -99,6 +100,11 @@ layer_1/tile_data = PackedInt32Array(1310699, 458752, 65536, 1310700, 458752, 65
 position = Vector2(264, 560)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = -690
+limit_top = 0
+limit_right = 1350
+limit_bottom = 1035
+position_smoothing_enabled = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(785, 874)
@@ -113,3 +119,6 @@ color = Color(0.186489, 0.676616, 0.707814, 1)
 texture = SubResource("GradientTexture2D_p1dc8")
 texture_scale = 16.89
 height = 600.0
+
+[node name="Enemy" parent="." instance=ExtResource("4_kgrqc")]
+position = Vector2(755, 896)

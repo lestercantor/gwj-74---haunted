@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://datyn7j67bbd7"]
 
 [ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_gpxii"]
-[ext_resource type="Texture2D" uid="uid://vx00p2oaldfj" path="res://Art Assets/Enemy/Enemy-Sheet.png" id="2_kflnl"]
+[ext_resource type="Texture2D" uid="uid://vx00p2oaldfj" path="res://Art Assets/Characters/Enemy/Enemy-Sheet.png" id="2_kflnl"]
 [ext_resource type="Script" path="res://Enemy/detection_range.gd" id="2_ni1g3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ysfc0"]

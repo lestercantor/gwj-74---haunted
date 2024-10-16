@@ -10,12 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://ckmqq1vxtwkhn" path="res://Art Assets/UI/Logo.png" id="5_3g11h"]
 [ext_resource type="Texture2D" uid="uid://ssnyyu2g1vsk" path="res://Art Assets/Backgrounds/RainLayer.png" id="6_m5tty"]
 [ext_resource type="Texture2D" uid="uid://dj4vgm6rxrhvd" path="res://Art Assets/Backgrounds/Castle.png" id="7_iiesl"]
-[ext_resource type="Texture2D" uid="uid://dghu7dylu5vqm" path="res://Art Assets/Backgrounds/CastleTileset_n2.png" id="9_kmx8p"]
 [ext_resource type="PackedScene" uid="uid://3ctt5ma2xwd5" path="res://Art Assets/Art Scenes/LightningScene.tscn" id="11_4ecw4"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_inmro"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_txidj"]
 diffuse_texture = ExtResource("7_iiesl")
-normal_texture = ExtResource("9_kmx8p")
+normal_texture = SubResource("CompressedTexture2D_inmro")
 
 [node name="Node2D2" type="Node2D"]
 
