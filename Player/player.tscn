@@ -81,7 +81,7 @@ script = ExtResource("1_et4br")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6txvk")
-animation = &"Jump"
+animation = &"Idle"
 autoplay = "Idle"
 offset = Vector2(0, -6)
 

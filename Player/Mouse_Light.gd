@@ -1,6 +1,11 @@
 extends Node2D
 class_name MouseLight
 
+
+var cursorOn = preload("res://Art Assets/UI/MatchstickOn.png")
+var cursorOff = preload("res://Art Assets/UI/MatchstickOff.png")
+
+
 @export var light: PointLight2D
 
 var charge: float = 100:
@@ -32,6 +37,8 @@ func _ready() -> void:
 	# Set default properties 
 	light.texture_scale = 7
 	light.enabled = false
+	Input.set_custom_mouse_cursor(cursorOff)
+
 	
 func _process(delta: float) -> void:
 	# Always get the global position of the mouse for the light
@@ -54,6 +61,8 @@ func modify_charge(delta: float) -> void:
 	if mouse_down and can_activate_light and charge != 0:
 		# Enable the light when conditions are true
 		light.enabled = true
+		Input.set_custom_mouse_cursor(cursorOn)
+
 		
 		# After timer is bigger than 0.1 (after getting increased by delta) execute inside the code
 		if timer > 0.1:
@@ -63,6 +72,8 @@ func modify_charge(delta: float) -> void:
 			
 	else:
 		light.enabled = false
+		Input.set_custom_mouse_cursor(cursorOff)
+
 		
 		if timer > 0.1 and charge != 100:
 			charge += light_charge

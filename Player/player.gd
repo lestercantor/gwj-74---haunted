@@ -4,6 +4,7 @@ class_name Player
 const SPEED: float = 200.0
 const JUMP_VELOCITY: float = -500.0
 
+var cursor = preload("res://Art Assets/UI/MatchstickOff.png")
 
 @onready var animated_Sprite = $AnimatedSprite2D	
 
@@ -12,6 +13,8 @@ const JUMP_VELOCITY: float = -500.0
 func _ready() -> void:
 	# Connect to signal from Area2D node when player death area has overlapped with the enemy
 	death_area_2d.body_entered.connect(enemy_collision)
+	Input.set_custom_mouse_cursor(cursor)
+
 	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
