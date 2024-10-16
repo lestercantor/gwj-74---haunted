@@ -60,4 +60,3 @@ func modify_charge(delta: float) -> void:
 				can_activate_light = false
 			else:
 				can_activate_light = true
-	print (charge)

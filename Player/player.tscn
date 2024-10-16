@@ -41,3 +41,4 @@ light = NodePath("PointLight2D")
 color = Color(0.82235, 0.579043, 0.355313, 1)
 texture = SubResource("GradientTexture2D_3akqv")
 texture_scale = 3.0
+height = 64.0
