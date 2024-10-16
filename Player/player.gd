@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 const SPEED: float = 200.0
-const JUMP_VELOCITY: float = -300.0
+const JUMP_VELOCITY: float = -500.0
 
 
 @onready var animated_Sprite = $AnimatedSprite2D	
@@ -41,10 +41,10 @@ func enemy_collision(enemy: Enemy) -> void:
 func handle_movement_animation(direction):
 		if !velocity.x:
 			animated_Sprite.play("Idle")
-		if velocity.x :
+		if velocity.x:
 			animated_Sprite.play("Walk")
 			toggle_flip_sprite(direction)
-		if velocity.y >0 :
+		if !is_on_floor():
 			animated_Sprite.play("Jump")
 
 			

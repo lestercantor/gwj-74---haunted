@@ -38,7 +38,7 @@ animations = [{
 "speed": 2.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.01,
 "texture": SubResource("AtlasTexture_e2cto")
 }],
 "loop": true,
@@ -81,7 +81,7 @@ script = ExtResource("1_et4br")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6txvk")
-animation = &"Idle"
+animation = &"Jump"
 autoplay = "Idle"
 offset = Vector2(0, -6)
 
