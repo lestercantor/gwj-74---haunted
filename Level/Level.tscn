@@ -83,7 +83,7 @@ fill_to = Vector2(1, 0.0641026)
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2(0, 192)
 scale = Vector2(3, 3)
-color = Color(0.0846899, 0.0846899, 0.0846899, 1)
+color = Color(0.0214346, 0.0214346, 0.0214346, 1)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, 416)
@@ -103,7 +103,8 @@ position = Vector2(264, 560)
 limit_left = -690
 limit_top = 0
 limit_right = 1350
-limit_bottom = 1035
+limit_bottom = 1050
+limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
