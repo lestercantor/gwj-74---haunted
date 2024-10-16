@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpdn4qiyiuosk"]
+[gd_scene load_steps=6 format=3 uid="uid://bpdn4qiyiuosk"]
 
 [ext_resource type="Script" path="res://Art Assets/ArtScripts/mainmenu.gd" id="1_0o6a6"]
 [ext_resource type="FontFile" uid="uid://bcab12gimgui0" path="res://Art Assets/Fonts/OldLondon.ttf" id="1_3l4ce"]
 [ext_resource type="Texture2D" uid="uid://c7bosyh0tifwo" path="res://Art Assets/UI/Start.png" id="3_as1so"]
 [ext_resource type="Texture2D" uid="uid://b56x5l1g0a3jx" path="res://Art Assets/UI/Quit.png" id="4_od6dv"]
+[ext_resource type="Texture2D" uid="uid://bpgkq8y0soeyd" path="res://Art Assets/UI/Settings.png" id="4_tioxj"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -33,6 +34,16 @@ flat = true
 alignment = 0
 icon_alignment = 1
 
+[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_3l4ce")
+theme_override_font_sizes/font_size = 50
+icon = ExtResource("4_tioxj")
+flat = true
+alignment = 0
+icon_alignment = 1
+
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
@@ -44,4 +55,5 @@ alignment = 0
 icon_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

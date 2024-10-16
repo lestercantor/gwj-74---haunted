@@ -10,6 +10,6 @@ func _ready() -> void:
 
 func _on_timer_timeout() -> void:
 	$Sprite2D.show()
-	await get_tree().create_timer(0.1,0.3).timeout
+	await get_tree().create_timer(0.2).timeout
 	$Sprite2D.hide()
 		
