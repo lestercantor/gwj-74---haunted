@@ -10,7 +10,6 @@ normal_texture = ExtResource("2_vbn3i")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gs6dd"]
 texture = SubResource("CanvasTexture_um8ss")
-use_texture_padding = false
 2:3/next_alternative_id = 2
 2:3/0 = 0
 0:2/size_in_atlas = Vector2i(2, 4)
@@ -103,6 +102,13 @@ position = Vector2(264, 560)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(785, 874)
+color = Color(0.186489, 0.676616, 0.707814, 1)
+texture = SubResource("GradientTexture2D_p1dc8")
+texture_scale = 16.89
+height = 600.0
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(-1237, 904)
 color = Color(0.186489, 0.676616, 0.707814, 1)
 texture = SubResource("GradientTexture2D_p1dc8")
 texture_scale = 16.89
