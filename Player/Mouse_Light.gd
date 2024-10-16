@@ -15,6 +15,19 @@ var can_activate_light: bool = true
 # Counter to count down delta time which will be reset
 var timer: float = 0
 
+# Light radius size
+@export var max_size: float = 7
+@export var min_size: float = 0.5
+
+# Light charge to increase and decrease
+@export var light_deplete: float = 1.8
+@export var light_charge: float = 0.7
+
+var light_size: float = 7:
+	set(value):
+		light_size = clampf(value, min_size, max_size)
+		light.texture_scale = light_size
+		
 func _ready() -> void:
 	# Set default properties 
 	light.texture_scale = 7
@@ -44,7 +57,7 @@ func modify_charge(delta: float) -> void:
 		
 		# After timer is bigger than 0.1 (after getting increased by delta) execute inside the code
 		if timer > 0.1:
-			charge -= 1.8
+			charge -= light_deplete
 			# Reset the timer counter
 			timer = 0
 			
@@ -52,7 +65,7 @@ func modify_charge(delta: float) -> void:
 		light.enabled = false
 		
 		if timer > 0.1 and charge != 100:
-			charge += 0.7
+			charge += light_charge
 			timer = 0
 			# Make sure the player can't spam activating the light by adding this check if charge is less than 30 
 			# After holding it down and then they release it or reach 0 charge
@@ -60,3 +73,9 @@ func modify_charge(delta: float) -> void:
 				can_activate_light = false
 			else:
 				can_activate_light = true
+				
+	calculate_light_size()
+
+func calculate_light_size() -> void:
+	light_size = max_size * (1-(light_deplete/charge))
+	print(light_size)
