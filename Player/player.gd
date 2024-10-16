@@ -4,6 +4,9 @@ class_name Player
 const SPEED: float = 200.0
 const JUMP_VELOCITY: float = -300.0
 
+
+@onready var animated_Sprite = $AnimatedSprite2D	
+
 @onready var death_area_2d: Area2D = $DeathArea2D
 
 func _ready() -> void:
@@ -27,8 +30,26 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	handle_movement_animation(direction)
 	
 # Call function when player has collided with enemy
 func enemy_collision(enemy: Enemy) -> void:
 	if not enemy is Enemy: return
 	print("player got killed by enemy")
+	
+	
+func handle_movement_animation(direction):
+		if !velocity.x:
+			animated_Sprite.play("Idle")
+		if velocity.x :
+			animated_Sprite.play("Walk")
+			toggle_flip_sprite(direction)
+		if velocity.y >0 :
+			animated_Sprite.play("Jump")
+
+			
+func toggle_flip_sprite(direction):
+	if direction == 1:
+		animated_Sprite.flip_h = false
+	if direction == -1:
+		animated_Sprite.flip_h = true

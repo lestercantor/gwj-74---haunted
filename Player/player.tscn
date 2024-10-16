@@ -1,8 +1,61 @@
-[gd_scene load_steps=8 format=3 uid="uid://hhnak10g0byc"]
+[gd_scene load_steps=14 format=3 uid="uid://hhnak10g0byc"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_et4br"]
 [ext_resource type="Script" path="res://Player/Mouse_Light.gd" id="2_bq8rw"]
-[ext_resource type="Texture2D" uid="uid://c345rc6medu6m" path="res://Art Assets/Characters/Player/MainCharacter.png" id="2_njxs8"]
+[ext_resource type="Texture2D" uid="uid://3kbgkcjkhwfw" path="res://Art Assets/Characters/Player/MainCharacter-Sheet.png" id="2_qvldt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tg7j4"]
+atlas = ExtResource("2_qvldt")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1k2n"]
+atlas = ExtResource("2_qvldt")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2cto"]
+atlas = ExtResource("2_qvldt")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48jfp"]
+atlas = ExtResource("2_qvldt")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aybet"]
+atlas = ExtResource("2_qvldt")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6txvk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tg7j4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1k2n")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2cto")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48jfp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aybet")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 2.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wd64w"]
 height = 50.0
@@ -26,9 +79,11 @@ collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_et4br")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_njxs8")
-offset = Vector2(0, -6.56)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6txvk")
+animation = &"Idle"
+autoplay = "Idle"
+offset = Vector2(0, -6)
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_wd64w")
