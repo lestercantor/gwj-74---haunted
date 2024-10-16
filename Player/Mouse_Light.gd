@@ -6,17 +6,22 @@ class_name MouseLight
 var charge: float = 100:
 	set(value):
 		charge = clampf(value, 0, 100)
-		
-var mouse_down: bool = false
 
-var deplete_timer: float = 0
-var increase_timer: float = 0
+# Boolean checks to if the player is holding down the mouse button 
+# And if they can activate the light 
+var mouse_down: bool = false
+var can_activate_light: bool = true
+
+# Counter to count down delta time which will be reset
+var timer: float = 0
 
 func _ready() -> void:
+	# Set default properties 
 	light.texture_scale = 7
 	light.enabled = false
 	
 func _process(delta: float) -> void:
+	# Always get the global position of the mouse for the light
 	light.global_position = get_global_mouse_position()
 	
 	modify_charge(delta)
@@ -29,15 +34,30 @@ func _input(event: InputEvent) -> void:
 		mouse_down = false
 
 func modify_charge(delta: float) -> void:
-	deplete_timer += delta
+	# Increase timer counter by delta
+	timer += delta
 	
-	if mouse_down and charge > 1.8:
-		if deplete_timer > 0.1:
+	# Check if the player is holding down the mouse and the charge is not 0
+	if mouse_down and can_activate_light and charge != 0:
+		# Enable the light when conditions are true
+		light.enabled = true
+		
+		# After timer is bigger than 0.1 (after getting increased by delta) execute inside the code
+		if timer > 0.1:
 			charge -= 1.8
-			deplete_timer = 0
-			light.enabled = true
+			# Reset the timer counter
+			timer = 0
+			
 	else:
-		if deplete_timer > 0.1 and charge != 100:
+		light.enabled = false
+		
+		if timer > 0.1 and charge != 100:
 			charge += 0.7
-			deplete_timer = 0
-			light.enabled = false
+			timer = 0
+			# Make sure the player can't spam activating the light by adding this check if charge is less than 30 
+			# After holding it down and then they release it or reach 0 charge
+			if charge < 30:
+				can_activate_light = false
+			else:
+				can_activate_light = true
+	print (charge)
