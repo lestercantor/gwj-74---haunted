@@ -30,10 +30,26 @@ fill_to = Vector2(0.905983, 0.111111)
 [node name="Node2D2" type="Node2D"]
 
 [node name="GloomySkyBackground" type="Sprite2D" parent="."]
-z_index = -10
+z_index = -11
 position = Vector2(640, 360)
 scale = Vector2(2, 2)
 texture = ExtResource("3_v5tdo")
+
+[node name="Castle" type="Sprite2D" parent="GloomySkyBackground"]
+texture = SubResource("CanvasTexture_txidj")
+
+[node name="Lightning3" parent="GloomySkyBackground" instance=ExtResource("11_4ecw4")]
+position = Vector2(156.5, -57.5)
+TimerLength = 3.0
+
+[node name="Lightning" parent="GloomySkyBackground" instance=ExtResource("11_4ecw4")]
+position = Vector2(-12.5, -80.5)
+scale = Vector2(0.5, 0.5)
+TimerLength = 1.0
+
+[node name="Lightning2" parent="GloomySkyBackground" instance=ExtResource("11_4ecw4")]
+position = Vector2(222.5, -88.5)
+scale = Vector2(0.5, 0.5)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_bh1n1")
@@ -99,11 +115,6 @@ scale = Vector2(1.8, 1.8)
 skew = -0.349066
 texture = ExtResource("6_m5tty")
 
-[node name="Castle" type="Sprite2D" parent="."]
-position = Vector2(640, 360)
-scale = Vector2(2, 2)
-texture = SubResource("CanvasTexture_txidj")
-
 [node name="Moon" type="Sprite2D" parent="."]
 z_index = -10
 position = Vector2(289, 101)
@@ -111,19 +122,8 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_mq54q")
 
 [node name="PointLight2D" type="PointLight2D" parent="Moon"]
-color = Color(0.913645, 0.574215, 0, 0.133333)
+color = Color(5.77569e-07, 0.735059, 0.883632, 0.133333)
 energy = 2.28
 texture = SubResource("GradientTexture2D_t46lp")
-texture_scale = 6.47
-
-[node name="Lightning3" parent="." instance=ExtResource("11_4ecw4")]
-position = Vector2(953, 245)
-scale = Vector2(2, 2)
-TimerLength = 3.0
-
-[node name="Lightning" parent="." instance=ExtResource("11_4ecw4")]
-position = Vector2(615, 199)
-TimerLength = 1.0
-
-[node name="Lightning2" parent="." instance=ExtResource("11_4ecw4")]
-position = Vector2(1085, 183)
+texture_scale = 2.09
+height = 512.0
