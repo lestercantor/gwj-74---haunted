@@ -1,7 +1,6 @@
 extends Node2D
 class_name MouseLight
 
-
 var cursorOn = preload("res://Art Assets/UI/MatchstickOn.png")
 var cursorOff = preload("res://Art Assets/UI/MatchstickOff.png")
 
@@ -12,6 +11,7 @@ var cursorOff = preload("res://Art Assets/UI/MatchstickOff.png")
 var charge: float = max_charge:
 	set(value):
 		charge = clampf(value, 0, max_charge)
+		GlobalSignals.charge_changed.emit()
 
 # Boolean checks to if the player is holding down the mouse button 
 # And if they can activate the light 

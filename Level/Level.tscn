@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://w5vlxb805s64"]
+[gd_scene load_steps=11 format=3 uid="uid://w5vlxb805s64"]
 
 [ext_resource type="Texture2D" uid="uid://jvhgrw0muibq" path="res://Art Assets/Tilesets/CastleTileset.png" id="1_76u6i"]
+[ext_resource type="Script" path="res://Player/Light_Charge_UI.gd" id="1_oigwh"]
 [ext_resource type="Texture2D" uid="uid://hrm4bxxj1278" path="res://Art Assets/Backgrounds/CastleTileset_n.png" id="2_kl17q"]
 [ext_resource type="PackedScene" uid="uid://hhnak10g0byc" path="res://Player/player.tscn" id="2_othsh"]
 [ext_resource type="PackedScene" uid="uid://datyn7j67bbd7" path="res://Enemy/enemy.tscn" id="4_kgrqc"]
@@ -79,6 +80,17 @@ fill_from = Vector2(0.504274, 0.512821)
 fill_to = Vector2(1, 0.0641026)
 
 [node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player")]
+offset_left = 28.0
+offset_top = 649.0
+offset_right = 484.0
+offset_bottom = 701.0
+value = 100.0
+script = ExtResource("1_oigwh")
+player = NodePath("../../Player")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2(0, 192)

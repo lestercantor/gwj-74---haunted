@@ -6,8 +6,8 @@ const JUMP_VELOCITY: float = -500.0
 
 var cursor = preload("res://Art Assets/UI/MatchstickOff.png")
 
-@onready var animated_Sprite = $AnimatedSprite2D	
-
+@onready var animated_Sprite = $AnimatedSprite2D
+@onready var mouse_light: MouseLight = $MouseLight
 @onready var death_area_2d: Area2D = $DeathArea2D
 
 func _ready() -> void:
