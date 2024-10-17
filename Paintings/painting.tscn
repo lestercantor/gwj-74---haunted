@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6j7qu0ii6054"]
+[gd_scene load_steps=6 format=3 uid="uid://b6j7qu0ii6054"]
+
+[ext_resource type="Texture2D" uid="uid://bmgfwcam6h7jp" path="res://Art Assets/Paintings/PaintingFrame.png" id="1_vnq1p"]
+[ext_resource type="Texture2D" uid="uid://btqubnrk5a7k6" path="res://Art Assets/Paintings/PaintingFrame_n.png" id="2_aqqrq"]
+[ext_resource type="Texture2D" uid="uid://btu0mshq5gwnm" path="res://Art Assets/Paintings/PaintingBackground01.png" id="3_f6cnm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_joabk"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_gg4x7"]
+diffuse_texture = ExtResource("1_vnq1p")
+normal_texture = ExtResource("2_aqqrq")
 
 [node name="Painting" type="Node2D"]
 
@@ -8,3 +16,10 @@
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BurnableArea"]
 shape = SubResource("RectangleShape2D_joabk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_gg4x7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("3_f6cnm")
