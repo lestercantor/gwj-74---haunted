@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://w5vlxb805s64"]
+[gd_scene load_steps=18 format=3 uid="uid://w5vlxb805s64"]
 
 [ext_resource type="Texture2D" uid="uid://jvhgrw0muibq" path="res://Art Assets/Tilesets/CastleTileset.png" id="1_76u6i"]
 [ext_resource type="Texture2D" uid="uid://c8t1q4rqsnjk6" path="res://Art Assets/UI/MatchStickUIUnder.png" id="2_ftfeo"]
@@ -9,13 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://datyn7j67bbd7" path="res://Enemy/enemy.tscn" id="4_kgrqc"]
 [ext_resource type="Texture2D" uid="uid://l54khree1rmq" path="res://Art Assets/UI/MatchStickUIFlame.png" id="4_uggvw"]
 [ext_resource type="PackedScene" uid="uid://b6j7qu0ii6054" path="res://Paintings/painting.tscn" id="5_npcdf"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_304g7"]
-texture = ExtResource("2_ftfeo")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uj3d8"]
-texture = ExtResource("3_7peit")
-region_rect = Rect2(0, 0, 64, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k111t"]
 content_margin_bottom = 16.0
@@ -105,17 +98,7 @@ fill_to = Vector2(1, 0.0641026)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
-visible = false
-offset_left = 28.0
-offset_top = 649.0
-offset_right = 484.0
-offset_bottom = 701.0
-theme_override_styles/background = SubResource("StyleBoxTexture_304g7")
-theme_override_styles/fill = SubResource("StyleBoxTexture_uj3d8")
-value = 100.0
-
-[node name="HSlider" type="HSlider" parent="CanvasLayer" node_paths=PackedStringArray("player")]
+[node name="LightChargeSlider" type="HSlider" parent="CanvasLayer" node_paths=PackedStringArray("player")]
 offset_left = 15.0
 offset_top = 15.0
 offset_right = 79.0

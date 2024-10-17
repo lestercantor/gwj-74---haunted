@@ -7,6 +7,7 @@ var cursorOff = preload("res://Art Assets/UI/MatchstickOff.png")
 signal charge_changed
 
 @export var light: PointLight2D
+@export var burn_area: Area2D
 
 @export var max_charge: float = 100
 var charge: float = max_charge:
@@ -27,7 +28,7 @@ var timer: float = 0
 @export var min_size: float = 0.5
 
 # Light charge to increase and decrease
-@export var light_deplete: float = 1.8
+@export var light_deplete: float = 1.1
 @export var light_charge: float = 0.7
 
 var light_size: float = 7:
@@ -44,7 +45,7 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	# Always get the global position of the mouse for the light
-	light.global_position = get_global_mouse_position()
+	global_position = get_global_mouse_position()
 	
 	modify_charge(delta)
 
@@ -66,7 +67,7 @@ func modify_charge(delta: float) -> void:
 		Input.set_custom_mouse_cursor(cursorOn)
 		
 		# After timer is bigger than 0.1 (after getting increased by delta) execute inside the code
-		if timer > 0.1:
+		if timer > 0.06:
 			charge -= light_deplete
 			# Reset the timer counter
 			timer = 0

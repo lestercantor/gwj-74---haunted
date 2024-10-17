@@ -12,3 +12,4 @@ func _ready() -> void:
 	
 func update() -> void:
 	self.value = player.mouse_light.charge
+	
