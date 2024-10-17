@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Enemy
 
-@export var SPEED: float = 150
+@export var SPEED: float = 200
 @export var ACCELERATION: float = 200
 @export var FRICTION: float = 300
 
