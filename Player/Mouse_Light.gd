@@ -4,6 +4,7 @@ class_name MouseLight
 var cursorOn = preload("res://Art Assets/UI/MatchstickOn.png")
 var cursorOff = preload("res://Art Assets/UI/MatchstickOff.png")
 
+signal charge_changed
 
 @export var light: PointLight2D
 
@@ -11,7 +12,7 @@ var cursorOff = preload("res://Art Assets/UI/MatchstickOff.png")
 var charge: float = max_charge:
 	set(value):
 		charge = clampf(value, 0, max_charge)
-		GlobalSignals.charge_changed.emit()
+		charge_changed.emit()
 
 # Boolean checks to if the player is holding down the mouse button 
 # And if they can activate the light 
@@ -74,7 +75,7 @@ func modify_charge(delta: float) -> void:
 		light.enabled = false
 		Input.set_custom_mouse_cursor(cursorOff)
 		
-		if timer > 0.1 and charge != 100:
+		if timer > 0.1 and charge != max_charge:
 			charge += light_charge
 			timer = 0
 			# Make sure the player can't spam activating the light by adding this check if charge is less than 30 

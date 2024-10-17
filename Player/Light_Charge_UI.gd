@@ -3,7 +3,12 @@ extends HSlider
 @export var player: Player
 
 func _ready() -> void:
-	GlobalSignals.charge_changed.connect(update)
+	await player.ready
+	player.mouse_light.charge_changed.connect(update)
+	
+	self.max_value = player.mouse_light.max_charge
+	
+	update()
 	
 func update() -> void:
-	value = player.mouse_light.charge
+	self.value = player.mouse_light.charge
