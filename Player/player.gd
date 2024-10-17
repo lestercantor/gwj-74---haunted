@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 const SPEED: float = 200.0
-const JUMP_VELOCITY: float = -500.0
+const JUMP_VELOCITY: float = -510.0
 
 var cursor = preload("res://Art Assets/UI/MatchstickOff.png")
 
