@@ -3,13 +3,13 @@ extends Node2D
 @export var TimerLength: float =  0
 
 func _ready() -> void:
-	$Sprite2D.hide()
+	$PointLight2D.hide()
 	randomize()
-	$Sprite2D/Timer.wait_time = randi_range(4,10)
+	$PointLight2D/Timer.wait_time = randi_range(4,10)
 
 
 func _on_timer_timeout() -> void:
-	$Sprite2D.show()
-	await get_tree().create_timer(0.2).timeout
-	$Sprite2D.hide()
+	$PointLight2D.show()
+	await get_tree().create_timer(0.8).timeout
+	$PointLight2D.hide()
 		

@@ -36,13 +36,8 @@ icon_alignment = 1
 
 [node name="SettingsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-focus_mode = 0
-theme_override_fonts/font = ExtResource("1_3l4ce")
-theme_override_font_sizes/font_size = 50
 icon = ExtResource("4_tioxj")
 flat = true
-alignment = 0
-icon_alignment = 1
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -55,5 +50,5 @@ alignment = 0
 icon_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
