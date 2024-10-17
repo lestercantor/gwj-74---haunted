@@ -1,4 +1,4 @@
-extends ProgressBar
+extends HSlider
 
 @export var player: Player
 

@@ -1,10 +1,31 @@
-[gd_scene load_steps=11 format=3 uid="uid://w5vlxb805s64"]
+[gd_scene load_steps=19 format=3 uid="uid://w5vlxb805s64"]
 
 [ext_resource type="Texture2D" uid="uid://jvhgrw0muibq" path="res://Art Assets/Tilesets/CastleTileset.png" id="1_76u6i"]
 [ext_resource type="Script" path="res://Player/Light_Charge_UI.gd" id="1_oigwh"]
+[ext_resource type="Texture2D" uid="uid://c8t1q4rqsnjk6" path="res://Art Assets/UI/MatchStickUIUnder.png" id="2_ftfeo"]
 [ext_resource type="Texture2D" uid="uid://hrm4bxxj1278" path="res://Art Assets/Backgrounds/CastleTileset_n.png" id="2_kl17q"]
 [ext_resource type="PackedScene" uid="uid://hhnak10g0byc" path="res://Player/player.tscn" id="2_othsh"]
+[ext_resource type="Texture2D" uid="uid://bhvhmw1ajhc6p" path="res://Art Assets/UI/MatchStickUIOver.png" id="3_7peit"]
 [ext_resource type="PackedScene" uid="uid://datyn7j67bbd7" path="res://Enemy/enemy.tscn" id="4_kgrqc"]
+[ext_resource type="Texture2D" uid="uid://l54khree1rmq" path="res://Art Assets/UI/MatchStickUIFlame.png" id="4_uggvw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_304g7"]
+texture = ExtResource("2_ftfeo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uj3d8"]
+texture = ExtResource("3_7peit")
+region_rect = Rect2(0, 0, 64, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k111t"]
+content_margin_bottom = 16.0
+texture = ExtResource("2_ftfeo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uwqy2"]
+texture = ExtResource("3_7peit")
+expand_margin_right = 1.0
+region_rect = Rect2(0, 0, 64, 16)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jiucy"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_um8ss"]
 diffuse_texture = ExtResource("1_76u6i")
@@ -83,16 +104,36 @@ fill_to = Vector2(1, 0.0641026)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player")]
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+visible = false
 offset_left = 28.0
 offset_top = 649.0
 offset_right = 484.0
 offset_bottom = 701.0
+theme_override_styles/background = SubResource("StyleBoxTexture_304g7")
+theme_override_styles/fill = SubResource("StyleBoxTexture_uj3d8")
 value = 100.0
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer"]
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 79.0
+offset_bottom = 31.0
+scale = Vector2(3, 3)
+size_flags_vertical = 1
+theme_override_constants/grabber_offset = -1
+theme_override_icons/grabber_disabled = ExtResource("4_uggvw")
+theme_override_styles/slider = SubResource("StyleBoxTexture_k111t")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_uwqy2")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_jiucy")
+step = 0.01
+value = 100.0
+editable = false
+scrollable = false
 script = ExtResource("1_oigwh")
-player = NodePath("../../Player")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 position = Vector2(0, 192)
 scale = Vector2(3, 3)
 color = Color(0.0214346, 0.0214346, 0.0214346, 1)
