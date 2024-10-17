@@ -40,7 +40,7 @@ func enemy_collision(enemy: Enemy) -> void:
 	print("player got killed by enemy")
 	
 	
-func handle_movement_animation(direction):
+func handle_movement_animation(direction) -> void:
 		if !velocity.x:
 			animated_Sprite.play("Idle")
 		if velocity.x:
@@ -50,8 +50,5 @@ func handle_movement_animation(direction):
 			animated_Sprite.play("Jump")
 
 			
-func toggle_flip_sprite(direction):
-	if direction == 1:
-		animated_Sprite.flip_h = false
-	if direction == -1:
-		animated_Sprite.flip_h = true
+func toggle_flip_sprite(direction) -> void:
+	animated_Sprite.flip_h = direction < 0 

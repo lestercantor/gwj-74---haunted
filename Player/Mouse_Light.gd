@@ -63,7 +63,6 @@ func modify_charge(delta: float) -> void:
 		# Enable the light when conditions are true
 		light.enabled = true
 		Input.set_custom_mouse_cursor(cursorOn)
-
 		
 		# After timer is bigger than 0.1 (after getting increased by delta) execute inside the code
 		if timer > 0.1:
@@ -74,7 +73,6 @@ func modify_charge(delta: float) -> void:
 	else:
 		light.enabled = false
 		Input.set_custom_mouse_cursor(cursorOff)
-
 		
 		if timer > 0.1 and charge != 100:
 			charge += light_charge
