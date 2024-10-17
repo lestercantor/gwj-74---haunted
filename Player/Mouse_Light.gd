@@ -8,9 +8,10 @@ var cursorOff = preload("res://Art Assets/UI/MatchstickOff.png")
 
 @export var light: PointLight2D
 
-var charge: float = 100:
+@export var max_charge: float = 100
+var charge: float = max_charge:
 	set(value):
-		charge = clampf(value, 0, 100)
+		charge = clampf(value, 0, max_charge)
 
 # Boolean checks to if the player is holding down the mouse button 
 # And if they can activate the light 
@@ -21,7 +22,7 @@ var can_activate_light: bool = true
 var timer: float = 0
 
 # Light radius size
-@export var max_size: float = 7
+@export var max_size: float = 5
 @export var min_size: float = 0.5
 
 # Light charge to increase and decrease
@@ -35,7 +36,7 @@ var light_size: float = 7:
 		
 func _ready() -> void:
 	# Set default properties 
-	light.texture_scale = 7
+	light.texture_scale = max_size
 	light.enabled = false
 	Input.set_custom_mouse_cursor(cursorOff)
 
@@ -88,5 +89,5 @@ func modify_charge(delta: float) -> void:
 	calculate_light_size()
 
 func calculate_light_size() -> void:
-	light_size = max_size * (1-(light_deplete/charge))
-	print(light_size)
+	light_size = max_size * (charge/max_charge)
+	
