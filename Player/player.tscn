@@ -109,7 +109,7 @@ fill_from = Vector2(0.512821, 0.495726)
 fill_to = Vector2(0, 0)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_52maj"]
-radius = 7.0
+radius = 11.5109
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(2, 2)

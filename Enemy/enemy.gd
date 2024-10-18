@@ -11,8 +11,6 @@ class_name Enemy
 @onready var animated_sprite_2d: AnimatedSprite2D = $FlipDirection/AnimatedSprite2D
 @onready var burnable_area: Area2D = $BurnableArea
 
-var timer: float = 1
-var burning: bool = false
 # Flip necessary nodes when the move direction is changed
 var move_direction: Vector2 = Vector2.RIGHT:
 	set(new_direction):
@@ -23,17 +21,8 @@ var move_direction: Vector2 = Vector2.RIGHT:
 			$EnemyCollision2.position.x *= -1
 
 func _ready() -> void:
-	burnable_area.area_entered.connect(on_area_entered)
-	burnable_area.area_exited.connect(on_area_exited)
-
-func _process(delta: float) -> void:
-	if burning:
-		timer += delta
-		
-		if timer > 1:
-			print("burning")
-			on_burning()
-			timer = 0
+	burnable_area.burning.connect(on_burning)
+	burnable_area.stopped_burning.connect(on_stopped_burning)
 
 func _physics_process(delta: float) -> void:
 	var player: Player = detection_range.player 
@@ -49,20 +38,10 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 
-func on_area_entered(area: Area2D) -> void:
-	burning = true
-	timer = 1
-
-func on_area_exited(area: Area2D) -> void:
-	burning = false
-	timer = 1
-	print("stopped burning")
-	stopped_burning()
-
 func on_burning() -> void:
 	SPEED = MAX_SPEED * 0.75
 	print(SPEED)
 
-func stopped_burning() -> void:
+func on_stopped_burning() -> void:
 	SPEED = MAX_SPEED
 	print(SPEED)

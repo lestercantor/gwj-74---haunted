@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://datyn7j67bbd7"]
+[gd_scene load_steps=12 format=3 uid="uid://datyn7j67bbd7"]
 
 [ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_gpxii"]
 [ext_resource type="Texture2D" uid="uid://vx00p2oaldfj" path="res://Art Assets/Characters/Enemy/Enemy-Sheet.png" id="2_kflnl"]
 [ext_resource type="Script" path="res://Enemy/detection_range.gd" id="2_ni1g3"]
+[ext_resource type="Script" path="res://burnable_area.gd" id="4_r8wde"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ysfc0"]
 atlas = ExtResource("2_kflnl")
@@ -75,9 +76,12 @@ debug_color = Color(0.66397, 0.512569, 0, 0.42)
 [node name="BurnableArea" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 16
+script = ExtResource("4_r8wde")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BurnableArea"]
 shape = SubResource("CircleShape2D_pevly")
 
 [connection signal="body_entered" from="DetectionRange" to="DetectionRange" method="_on_body_entered"]
 [connection signal="body_exited" from="DetectionRange" to="DetectionRange" method="_on_body_exited"]
+[connection signal="area_entered" from="BurnableArea" to="BurnableArea" method="_on_area_entered"]
+[connection signal="area_exited" from="BurnableArea" to="BurnableArea" method="_on_area_exited"]
