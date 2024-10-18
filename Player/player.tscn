@@ -89,7 +89,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Walk",
-"speed": 8.0
+"speed": 12.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wd64w"]
@@ -119,9 +119,9 @@ script = ExtResource("1_et4br")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6txvk")
-animation = &"Idle"
+animation = &"Walk"
 autoplay = "Idle"
-frame_progress = 0.00336765
+frame_progress = 0.344787
 offset = Vector2(0, -6)
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]

@@ -1,0 +1,96 @@
+[gd_scene load_steps=16 format=3 uid="uid://c6ukj0fwqxd8u"]
+
+[ext_resource type="Script" path="res://Paintings/painting.gd" id="1_nl45m"]
+[ext_resource type="Script" path="res://burnable_area.gd" id="2_nrr1b"]
+[ext_resource type="Texture2D" uid="uid://bmgfwcam6h7jp" path="res://Art Assets/Paintings/PaintingFrame.png" id="3_iof0y"]
+[ext_resource type="Texture2D" uid="uid://btqubnrk5a7k6" path="res://Art Assets/Paintings/PaintingFrame_n.png" id="4_j5jfs"]
+[ext_resource type="Texture2D" uid="uid://btu0mshq5gwnm" path="res://Art Assets/Paintings/PaintingBackground01.png" id="5_wsu26"]
+[ext_resource type="Texture2D" uid="uid://btoeajhsr20ox" path="res://Art Assets/Effects/PaintingBurning-Sheet.png" id="6_jaqf5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_joabk"]
+size = Vector2(44, 102)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_gg4x7"]
+diffuse_texture = ExtResource("3_iof0y")
+normal_texture = ExtResource("4_j5jfs")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tpuv"]
+atlas = ExtResource("6_jaqf5")
+region = Rect2(0, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6yi2"]
+atlas = ExtResource("6_jaqf5")
+region = Rect2(128, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ku40f"]
+atlas = ExtResource("6_jaqf5")
+region = Rect2(256, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lp8je"]
+atlas = ExtResource("6_jaqf5")
+region = Rect2(384, 0, 128, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hf0qa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tpuv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6yi2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ku40f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lp8je")
+}],
+"loop": true,
+"name": &"Burning",
+"speed": 12.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_1y26g"]
+offsets = PackedFloat32Array(0, 0.848624)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ga5cr"]
+gradient = SubResource("Gradient_1y26g")
+fill = 1
+fill_from = Vector2(0.512821, 0.5)
+fill_to = Vector2(0.918803, 0.0940171)
+
+[node name="BurningPainting" type="Node2D"]
+script = ExtResource("1_nl45m")
+
+[node name="BurnableArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("2_nrr1b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BurnableArea"]
+shape = SubResource("RectangleShape2D_joabk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_gg4x7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("5_wsu26")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_hf0qa")
+animation = &"Burning"
+autoplay = "Burning"
+frame_progress = 0.635885
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.93603, 0.462841, 3.85046e-07, 1)
+energy = 2.01
+texture = SubResource("GradientTexture2D_ga5cr")
+texture_scale = 9.3
+
+[connection signal="area_entered" from="BurnableArea" to="BurnableArea" method="_on_area_entered"]
+[connection signal="area_exited" from="BurnableArea" to="BurnableArea" method="_on_area_exited"]
+[connection signal="burning" from="BurnableArea" to="." method="_on_burnable_area_burning"]
