@@ -1,14 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://c6ukj0fwqxd8u"]
+[gd_scene load_steps=13 format=3 uid="uid://c6ukj0fwqxd8u"]
 
-[ext_resource type="Script" path="res://Paintings/painting.gd" id="1_nl45m"]
-[ext_resource type="Script" path="res://burnable_area.gd" id="2_nrr1b"]
 [ext_resource type="Texture2D" uid="uid://bmgfwcam6h7jp" path="res://Art Assets/Paintings/PaintingFrame.png" id="3_iof0y"]
 [ext_resource type="Texture2D" uid="uid://btqubnrk5a7k6" path="res://Art Assets/Paintings/PaintingFrame_n.png" id="4_j5jfs"]
 [ext_resource type="Texture2D" uid="uid://btu0mshq5gwnm" path="res://Art Assets/Paintings/PaintingBackground01.png" id="5_wsu26"]
 [ext_resource type="Texture2D" uid="uid://btoeajhsr20ox" path="res://Art Assets/Effects/PaintingBurning-Sheet.png" id="6_jaqf5"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_joabk"]
-size = Vector2(44, 102)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_gg4x7"]
 diffuse_texture = ExtResource("3_iof0y")
@@ -61,15 +56,6 @@ fill_from = Vector2(0.512821, 0.5)
 fill_to = Vector2(0.918803, 0.0940171)
 
 [node name="BurningPainting" type="Node2D"]
-script = ExtResource("1_nl45m")
-
-[node name="BurnableArea" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 16
-script = ExtResource("2_nrr1b")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BurnableArea"]
-shape = SubResource("RectangleShape2D_joabk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("CanvasTexture_gg4x7")
@@ -90,7 +76,3 @@ color = Color(0.93603, 0.462841, 3.85046e-07, 1)
 energy = 2.01
 texture = SubResource("GradientTexture2D_ga5cr")
 texture_scale = 9.3
-
-[connection signal="area_entered" from="BurnableArea" to="BurnableArea" method="_on_area_entered"]
-[connection signal="area_exited" from="BurnableArea" to="BurnableArea" method="_on_area_exited"]
-[connection signal="burning" from="BurnableArea" to="." method="_on_burnable_area_burning"]
