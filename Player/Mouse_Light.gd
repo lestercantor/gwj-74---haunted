@@ -6,6 +6,7 @@ var cursorOff = preload("res://Art Assets/UI/MatchstickOff.png")
 
 signal charge_changed
 
+var last_mouse_position: Vector2 = Vector2.ZERO
 @export var light: PointLight2D
 @export var burn_area: Area2D
 
@@ -31,7 +32,7 @@ var timer: float = 0
 @export var light_deplete: float = 1.1
 @export var light_charge: float = 0.7
 
-var light_size: float = 7:
+var light_size: float = max_size:
 	set(value):
 		light_size = clampf(value, min_size, max_size)
 		light.texture_scale = light_size
@@ -41,12 +42,10 @@ func _ready() -> void:
 	light.texture_scale = max_size
 	light.enabled = false
 	Input.set_custom_mouse_cursor(cursorOff)
-
 	
 func _process(delta: float) -> void:
 	# Always get the global position of the mouse for the light
 	global_position = get_global_mouse_position()
-	
 	modify_charge(delta)
 
 
@@ -62,6 +61,7 @@ func modify_charge(delta: float) -> void:
 	
 	# Check if the player is holding down the mouse and the charge is not 0
 	if mouse_down and can_activate_light and charge != 0:
+		$BurnArea/CollisionShape2D.disabled = false
 		# Enable the light when conditions are true
 		light.enabled = true
 		Input.set_custom_mouse_cursor(cursorOn)
@@ -71,10 +71,12 @@ func modify_charge(delta: float) -> void:
 			charge -= light_deplete
 			# Reset the timer counter
 			timer = 0
-			
+
+
 	else:
 		light.enabled = false
 		Input.set_custom_mouse_cursor(cursorOff)
+		$BurnArea/CollisionShape2D.disabled = true
 		
 		if timer > 0.1 and charge != max_charge:
 			charge += light_charge
@@ -90,4 +92,3 @@ func modify_charge(delta: float) -> void:
 
 func calculate_light_size() -> void:
 	light_size = max_size * (charge/max_charge)
-	

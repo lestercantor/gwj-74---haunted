@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://datyn7j67bbd7"]
+[gd_scene load_steps=11 format=3 uid="uid://datyn7j67bbd7"]
 
 [ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_gpxii"]
 [ext_resource type="Texture2D" uid="uid://vx00p2oaldfj" path="res://Art Assets/Characters/Enemy/Enemy-Sheet.png" id="2_kflnl"]
@@ -27,13 +27,21 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fb34a"]
+radius = 20.0
+height = 100.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iqfkk"]
+radius = 36.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xpny4"]
 radius = 250.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_pevly"]
+radius = 71.007
+
 [node name="Enemy" type="CharacterBody2D"]
-collision_layer = 4
-collision_mask = 3
+collision_layer = 20
+collision_mask = 2
 script = ExtResource("1_gpxii")
 
 [node name="FlipDirection" type="Node2D" parent="."]
@@ -48,7 +56,12 @@ frame = 1
 frame_progress = 0.476714
 
 [node name="EnemyCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-5, -5)
 shape = SubResource("CapsuleShape2D_fb34a")
+
+[node name="EnemyCollision2" type="CollisionShape2D" parent="."]
+position = Vector2(20, -18)
+shape = SubResource("CircleShape2D_iqfkk")
 
 [node name="DetectionRange" type="Area2D" parent="."]
 collision_layer = 0
@@ -58,6 +71,13 @@ script = ExtResource("2_ni1g3")
 [node name="DetectionCollision" type="CollisionShape2D" parent="DetectionRange"]
 shape = SubResource("CircleShape2D_xpny4")
 debug_color = Color(0.66397, 0.512569, 0, 0.42)
+
+[node name="BurnableArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BurnableArea"]
+shape = SubResource("CircleShape2D_pevly")
 
 [connection signal="body_entered" from="DetectionRange" to="DetectionRange" method="_on_body_entered"]
 [connection signal="body_exited" from="DetectionRange" to="DetectionRange" method="_on_body_exited"]

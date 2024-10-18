@@ -139,6 +139,7 @@ shape = SubResource("CircleShape2D_gyku4")
 script = ExtResource("2_bq8rw")
 light = NodePath("PointLight2D")
 burn_area = NodePath("BurnArea")
+max_size = 3.0
 
 [node name="PointLight2D" type="PointLight2D" parent="MouseLight"]
 color = Color(0.82235, 0.579043, 0.355313, 1)
@@ -147,8 +148,9 @@ texture_scale = 3.0
 height = 64.0
 
 [node name="BurnArea" type="Area2D" parent="MouseLight"]
-collision_layer = 0
-collision_mask = 16
+collision_layer = 16
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MouseLight/BurnArea"]
 shape = SubResource("CircleShape2D_52maj")
+disabled = true
