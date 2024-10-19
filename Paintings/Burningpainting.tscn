@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://c6ukj0fwqxd8u"]
+[gd_scene load_steps=14 format=3 uid="uid://c6ukj0fwqxd8u"]
 
 [ext_resource type="Texture2D" uid="uid://bmgfwcam6h7jp" path="res://Art Assets/Paintings/PaintingFrame.png" id="3_iof0y"]
 [ext_resource type="Texture2D" uid="uid://btqubnrk5a7k6" path="res://Art Assets/Paintings/PaintingFrame_n.png" id="4_j5jfs"]
+[ext_resource type="PackedScene" uid="uid://dv3ar7phxso0e" path="res://Paintings/painting_embers_particles.tscn" id="5_cy8bt"]
 [ext_resource type="Texture2D" uid="uid://btu0mshq5gwnm" path="res://Art Assets/Paintings/PaintingBackground01.png" id="5_wsu26"]
 [ext_resource type="Texture2D" uid="uid://btoeajhsr20ox" path="res://Art Assets/Effects/PaintingBurning-Sheet.png" id="6_jaqf5"]
 
@@ -72,7 +73,12 @@ autoplay = "Burning"
 frame_progress = 0.635885
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-2, 32)
 color = Color(0.93603, 0.462841, 3.85046e-07, 1)
 energy = 2.01
 texture = SubResource("GradientTexture2D_ga5cr")
 texture_scale = 9.3
+
+[node name="PaintingParticles" parent="." instance=ExtResource("5_cy8bt")]
+z_index = -1
+position = Vector2(-2, 10)

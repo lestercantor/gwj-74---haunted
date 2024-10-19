@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://hhnak10g0byc"]
+[gd_scene load_steps=21 format=3 uid="uid://hhnak10g0byc"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_et4br"]
 [ext_resource type="Script" path="res://Player/Mouse_Light.gd" id="2_bq8rw"]
 [ext_resource type="Texture2D" uid="uid://3kbgkcjkhwfw" path="res://Art Assets/Characters/Player/MainCharacter-Sheet.png" id="2_qvldt"]
+[ext_resource type="PackedScene" uid="uid://d1bmtp3takrwh" path="res://Player/match_embers_particles.tscn" id="4_id47g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tg7j4"]
 atlas = ExtResource("2_qvldt")
@@ -112,7 +113,7 @@ fill_to = Vector2(0, 0)
 radius = 11.5109
 
 [node name="Player" type="CharacterBody2D"]
-scale = Vector2(2, 2)
+scale = Vector2(2.01805, 2)
 collision_layer = 2
 collision_mask = 5
 floor_constant_speed = true
@@ -147,6 +148,9 @@ color = Color(0.82235, 0.579043, 0.355313, 1)
 texture = SubResource("GradientTexture2D_3akqv")
 texture_scale = 3.0
 height = 64.0
+
+[node name="MatchstickParticles" parent="MouseLight" instance=ExtResource("4_id47g")]
+emitting = false
 
 [node name="BurnArea" type="Area2D" parent="MouseLight"]
 collision_layer = 16

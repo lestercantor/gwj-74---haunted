@@ -4,9 +4,10 @@ class_name MouseLight
 var cursorOn = preload("res://Art Assets/UI/MatchstickOn.png")
 var cursorOff = preload("res://Art Assets/UI/MatchstickOff.png")
 
+@onready var matchstick_particles: GPUParticles2D = $MatchstickParticles
+
 signal charge_changed
 
-var last_mouse_position: Vector2 = Vector2.ZERO
 @export var light: PointLight2D
 @export var burn_area: Area2D
 
@@ -64,6 +65,7 @@ func modify_charge(delta: float) -> void:
 		$BurnArea/CollisionShape2D.disabled = false
 		# Enable the light when conditions are true
 		light.enabled = true
+		matchstick_particles.emitting = true
 		Input.set_custom_mouse_cursor(cursorOn)
 		
 		# After timer is bigger than 0.1 (after getting increased by delta) execute inside the code
@@ -75,6 +77,7 @@ func modify_charge(delta: float) -> void:
 
 	else:
 		light.enabled = false
+		matchstick_particles.emitting = false
 		Input.set_custom_mouse_cursor(cursorOff)
 		$BurnArea/CollisionShape2D.disabled = true
 		
