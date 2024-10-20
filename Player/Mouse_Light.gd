@@ -31,7 +31,7 @@ var timer: float = 0
 
 # Light charge to increase and decrease
 @export var light_deplete: float = 1.1
-@export var light_charge: float = 0.7
+@export var light_charge: float = 1
 
 var light_size: float = max_size:
 	set(value):

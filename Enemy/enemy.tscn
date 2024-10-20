@@ -82,6 +82,5 @@ script = ExtResource("4_r8wde")
 shape = SubResource("CircleShape2D_pevly")
 
 [connection signal="body_entered" from="DetectionRange" to="DetectionRange" method="_on_body_entered"]
-[connection signal="body_exited" from="DetectionRange" to="DetectionRange" method="_on_body_exited"]
 [connection signal="area_entered" from="BurnableArea" to="BurnableArea" method="_on_area_entered"]
 [connection signal="area_exited" from="BurnableArea" to="BurnableArea" method="_on_area_exited"]
