@@ -97,7 +97,7 @@ _data = {
 "random_blink": SubResource("Animation_qt1ju")
 }
 
-[node name="Eyes" type="Node2D"]
+[node name="Eyes" type="Node2D" groups=["Eyes"]]
 script = ExtResource("1_dvfek")
 
 [node name="SightArea" type="Area2D" parent="."]
