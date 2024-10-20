@@ -10,7 +10,6 @@ var cursor = preload("res://Art Assets/UI/MatchstickOff.png")
 @onready var animated_Sprite = $AnimatedSprite2D
 @onready var mouse_light: MouseLight = $MouseLight
 @onready var death_area_2d: Area2D = $DeathArea2D
-@onready var audio: AudioStreamPlayer = $AudioStreamPlayer
 
 var death: bool = false
 
@@ -60,9 +59,6 @@ func handle_movement_animation(direction) -> void:
 		if velocity.x:
 			animated_Sprite.play("Walk")
 			toggle_flip_sprite(direction)
-			if !audio.playing:
-				audio.pitch_scale = randf_range(0.6, 0.8)
-				audio.play()
 		if !is_on_floor():
 			animated_Sprite.play("Jump")
 			
