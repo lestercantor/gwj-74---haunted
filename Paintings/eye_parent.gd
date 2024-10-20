@@ -18,7 +18,6 @@ func random_blink() -> void:
 
 func random_number() -> bool:
 	var random: float = randf_range(0,1)
-	print(random)
 	if random > 0.7:
 		return true
 	else:
