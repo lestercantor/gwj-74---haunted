@@ -84,7 +84,6 @@ texture = SubResource("GradientTexture2D_ga5cr")
 texture_scale = 9.3
 
 [node name="PaintingParticles" parent="." instance=ExtResource("5_cy8bt")]
-z_index = -1
 position = Vector2(-2, 10)
 
 [node name="EyesShut3" type="Sprite2D" parent="."]
