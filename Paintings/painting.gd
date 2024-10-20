@@ -12,8 +12,11 @@ extends Node2D
 			burned.global_rotation = global_rotation
 			
 			get_tree().root.add_child(burned)
+			GlobalSignals.painting_counter.emit(-1)
 			queue_free()
+
+func _ready() -> void:
+	GlobalSignals.painting_counter.emit(1)
 
 func _on_burnable_area_burning() -> void:
 	self.health -= 5
-	print(self.health)
