@@ -5,6 +5,7 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	if not body is Player: return
 	
+	Input.set_custom_mouse_cursor(null)
 	if game_manager.count > 0:
 		TransitionScreen.transition()
 		await TransitionScreen.on_transition_finished
