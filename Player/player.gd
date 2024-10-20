@@ -43,7 +43,7 @@ func enemy_collision(enemy: Enemy) -> void:
 	
 # Call function when player is within range of death area
 func death_collision(death_area: Area2D) -> void:
-	player_death()
+	pass
 	
 func handle_movement_animation(direction) -> void:
 		if !velocity.x:
