@@ -59,3 +59,4 @@ func toggle_flip_sprite(direction) -> void:
 
 func player_death() -> void:
 	print("player died")
+	animated_Sprite.play("Death")
