@@ -47,7 +47,7 @@ func enemy_collision(enemy: Enemy) -> void:
 	
 # Call function when player is within range of death area
 func inside_eye_collision(_area: Area2D) -> void:
-	SPEED = MAX_SPEED * 0.85
+	SPEED = MAX_SPEED * 0.80
 	
 func outside_eye_collision(_area: Area2D) -> void:
 	SPEED = MAX_SPEED
