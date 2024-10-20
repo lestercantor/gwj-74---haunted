@@ -3,7 +3,7 @@ class_name Enemy
 
 @export var MAX_SPEED: float = 200
 @export var SPEED: float = 200
-@export var ACCELERATION: float = 200
+@export var ACCELERATION: float = 60
 @export var FRICTION: float = 300
 
 @onready var detection_range: Area2D = $DetectionRange

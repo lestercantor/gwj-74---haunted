@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c6ukj0fwqxd8u"]
+[gd_scene load_steps=15 format=3 uid="uid://c6ukj0fwqxd8u"]
 
 [ext_resource type="Texture2D" uid="uid://bmgfwcam6h7jp" path="res://Art Assets/Paintings/PaintingFrame.png" id="3_iof0y"]
 [ext_resource type="Texture2D" uid="uid://btqubnrk5a7k6" path="res://Art Assets/Paintings/PaintingFrame_n.png" id="4_j5jfs"]
@@ -56,6 +56,9 @@ fill = 1
 fill_from = Vector2(0.512821, 0.5)
 fill_to = Vector2(0.918803, 0.0940171)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6cndr"]
+radius = 148.003
+
 [node name="BurningPainting" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -82,3 +85,10 @@ texture_scale = 9.3
 [node name="PaintingParticles" parent="." instance=ExtResource("5_cy8bt")]
 z_index = -1
 position = Vector2(-2, 10)
+
+[node name="BurnArea" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BurnArea"]
+shape = SubResource("CircleShape2D_6cndr")
