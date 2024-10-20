@@ -1,11 +1,40 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4lowjnv5s7aa"]
+[gd_scene load_steps=9 format=3 uid="uid://c4lowjnv5s7aa"]
 
-[ext_resource type="Texture2D" uid="uid://bbqy2uy1iksg6" path="res://Art Assets/Paintings/EyesWhite.png" id="1_si0i1"]
+[ext_resource type="Texture2D" uid="uid://dip5c4vjqo0uw" path="res://Art Assets/Paintings/Eyes-Sheet.png" id="1_ngxyj"]
 [ext_resource type="Script" path="res://Paintings/eye.gd" id="2_nhh4i"]
 [ext_resource type="Texture2D" uid="uid://cbvtxe1o7pkaa" path="res://Art Assets/Paintings/EyePupil.png" id="3_pybti"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6tio4"]
 radius = 51.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4mok"]
+atlas = ExtResource("1_ngxyj")
+region = Rect2(0, 0, 17, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oiy7q"]
+atlas = ExtResource("1_ngxyj")
+region = Rect2(17, 0, 17, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjcqu"]
+atlas = ExtResource("1_ngxyj")
+region = Rect2(0, 0, 17, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5vl5c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4mok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oiy7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjcqu")
+}],
+"loop": false,
+"name": &"Blink",
+"speed": 5.0
+}]
 
 [node name="Eyes" type="Node2D"]
 
@@ -16,9 +45,12 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SightArea"]
 shape = SubResource("CircleShape2D_6tio4")
 
-[node name="Eye" type="Sprite2D" parent="."]
-texture = ExtResource("1_si0i1")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SightArea"]
+sprite_frames = SubResource("SpriteFrames_5vl5c")
+animation = &"Blink"
+frame = 2
+frame_progress = 1.0
 script = ExtResource("2_nhh4i")
 
-[node name="Pupil" type="Sprite2D" parent="Eye"]
+[node name="Pupil" type="Sprite2D" parent="SightArea/AnimatedSprite2D"]
 texture = ExtResource("3_pybti")

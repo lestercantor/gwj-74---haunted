@@ -221,7 +221,6 @@ texture = ExtResource("9_pew4v")
 [node name="Player" parent="." instance=ExtResource("2_othsh")]
 z_index = 1
 position = Vector2(-605, 978)
-floor_constant_speed = false
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(1.5, 1.5)
@@ -240,6 +239,7 @@ texture_scale = 6.67
 height = 600.0
 
 [node name="Enemy" parent="." instance=ExtResource("4_kgrqc")]
+z_index = 3
 position = Vector2(755, 896)
 
 [node name="Painting1" parent="." instance=ExtResource("5_npcdf")]
@@ -369,11 +369,31 @@ texture = ExtResource("15_stty6")
 position = Vector2(2293, 970)
 
 [node name="CollisionShape2D" parent="ExitArea" index="0"]
-position = Vector2(-2215, -10)
+position = Vector2(-2215, -18)
 
 [node name="Eyes" parent="ExitArea/CollisionShape2D" index="0" instance=ExtResource("18_d6rqk")]
 
 [node name="Eyes" parent="." instance=ExtResource("18_d6rqk")]
 position = Vector2(-565, 845)
+
+[node name="Eyes2" parent="." instance=ExtResource("18_d6rqk")]
+position = Vector2(-15, 360)
+
+[node name="Eyes3" parent="." instance=ExtResource("18_d6rqk")]
+position = Vector2(1, 370)
+
+[node name="Eyes6" parent="." instance=ExtResource("18_d6rqk")]
+position = Vector2(-10, 426)
+
+[node name="Eyes4" parent="." instance=ExtResource("18_d6rqk")]
+position = Vector2(17, 357)
+
+[node name="Eyes5" parent="." instance=ExtResource("18_d6rqk")]
+position = Vector2(15, 394)
+scale = Vector2(2, 2)
+
+[node name="Eyes7" parent="." instance=ExtResource("18_d6rqk")]
+position = Vector2(2, 451)
+scale = Vector2(2, 2)
 
 [editable path="ExitArea"]

@@ -116,7 +116,6 @@ radius = 11.5109
 scale = Vector2(1.75, 1.75)
 collision_layer = 2
 collision_mask = 5
-floor_constant_speed = true
 script = ExtResource("1_et4br")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -145,6 +144,7 @@ max_size = 3.0
 
 [node name="PointLight2D" type="PointLight2D" parent="MouseLight"]
 color = Color(0.82235, 0.579043, 0.355313, 1)
+energy = 1.7
 texture = SubResource("GradientTexture2D_3akqv")
 texture_scale = 3.0
 height = 64.0
