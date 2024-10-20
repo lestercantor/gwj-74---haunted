@@ -72,4 +72,4 @@ func player_death() -> void:
 	animated_Sprite.play("Death")
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
-	get_tree().change_scene_to_file("res://Art Assets/Art Scenes/BadEndScene.tscn")
+	get_tree().change_scene_to_file.call_deferred("res://Art Assets/Art Scenes/BadEndScene.tscn")

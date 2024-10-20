@@ -17,4 +17,3 @@ func toggle_pause() -> void:
 
 func change_counter(value: int) -> void:
 	count += value
-	print(count)
