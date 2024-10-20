@@ -1,4 +1,4 @@
-extends AnimatedSprite2D
+extends Sprite2D
 
 @onready var pupil: Sprite2D = $Pupil
 
@@ -17,9 +17,3 @@ func _process(_delta: float) -> void:
 func track_player(player_pos: Vector2):
 	player_position = player_pos
 	
-	
-func _on_timer_timeout() -> void:
-	$Pupil.hide()
-	self.play("Blink")
-	await get_tree().create_timer(.5).timeout
-	$Pupil.show()
