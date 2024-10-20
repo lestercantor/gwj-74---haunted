@@ -10,6 +10,7 @@ class_name Enemy
 @onready var flip_direction: Node2D = $FlipDirection
 @onready var animated_sprite_2d: AnimatedSprite2D = $FlipDirection/AnimatedSprite2D
 @onready var burnable_area: Area2D = $BurnableArea
+@onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var player_position: Vector2 = Vector2.ZERO
 
@@ -25,6 +26,7 @@ var move_direction: Vector2 = Vector2.RIGHT:
 func _ready() -> void:
 	burnable_area.burning.connect(on_burning)
 	burnable_area.stopped_burning.connect(on_stopped_burning)
+	detection_range.monster_scream.connect(player_found)
 	GlobalSignals.player_position.connect(track_player)
 
 func _physics_process(delta: float) -> void:
@@ -48,3 +50,6 @@ func on_burning() -> void:
 
 func on_stopped_burning() -> void:
 	SPEED = MAX_SPEED
+
+func player_found() -> void: 
+	audio.play()
