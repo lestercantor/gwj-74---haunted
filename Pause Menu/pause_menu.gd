@@ -6,6 +6,8 @@ func _notification(what: int) -> void:
 			hide()
 		Node.NOTIFICATION_UNPAUSED:
 			show()
+			$Panel/Menu.hide()
+			$Panel/VBoxContainer.show()
 
 
 
@@ -21,3 +23,7 @@ func _on_resume_pressed() -> void:
 func _on_settings_pressed() -> void:
 	$Panel/Menu.show()
 	$Panel/VBoxContainer.hide()
+
+
+func _on_menu_back_button_pressed() -> void:
+	$Panel/VBoxContainer.show()
