@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bbrgcy6cxhlsv"]
+[gd_scene load_steps=10 format=3 uid="uid://bbrgcy6cxhlsv"]
 
 [ext_resource type="Script" path="res://Art Assets/ArtScripts/AudioSlider.gd" id="1_2yuu7"]
 [ext_resource type="Texture2D" uid="uid://das6fy6abvf4d" path="res://Art Assets/UI/Master.png" id="1_3ahdy"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dg8wdw0ilnopv" path="res://Art Assets/UI/Music.png" id="4_c2tdr"]
 [ext_resource type="Script" path="res://Art Assets/ArtScripts/Lightlevel.gd" id="6_08l0y"]
 [ext_resource type="Texture2D" uid="uid://d1shn8jomfi46" path="res://Art Assets/UI/Back.png" id="6_huu3m"]
+[ext_resource type="Texture2D" uid="uid://cqifbe1kgwm8w" path="res://Art Assets/UI/Difficulty.png" id="6_yh71h"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -28,6 +29,7 @@ size_flags_horizontal = 0
 theme_override_constants/separation = 15
 
 [node name="Master" type="Sprite2D" parent="VBoxContainer"]
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("1_3ahdy")
 centered = false
 
@@ -42,7 +44,8 @@ script = ExtResource("1_2yuu7")
 bus_name = "Master"
 
 [node name="Music" type="Sprite2D" parent="VBoxContainer"]
-position = Vector2(0, 100)
+position = Vector2(0, 60)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("4_c2tdr")
 centered = false
 
@@ -57,7 +60,8 @@ script = ExtResource("1_2yuu7")
 bus_name = "Music"
 
 [node name="SFX" type="Sprite2D" parent="VBoxContainer"]
-position = Vector2(0, 200)
+position = Vector2(0, 120)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("3_5tsul")
 centered = false
 
@@ -72,8 +76,9 @@ script = ExtResource("1_2yuu7")
 bus_name = "Sound Effects"
 
 [node name="LightLevel" type="Sprite2D" parent="VBoxContainer"]
-position = Vector2(0, 277)
-texture = ExtResource("3_5tsul")
+position = Vector2(0, 180)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("6_yh71h")
 centered = false
 
 [node name="LightLevel" type="HSlider" parent="VBoxContainer/LightLevel"]
@@ -87,9 +92,10 @@ script = ExtResource("6_08l0y")
 
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 2
-offset_top = 340.0
-offset_right = 193.0
-offset_bottom = 398.0
+offset_left = -30.0
+offset_top = 275.0
+offset_right = 163.0
+offset_bottom = 333.0
 focus_mode = 0
 theme_override_fonts/font = ExtResource("2_vn2nr")
 theme_override_font_sizes/font_size = 50

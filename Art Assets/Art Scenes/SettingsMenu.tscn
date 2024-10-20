@@ -22,15 +22,15 @@ bus = &"Sound Effects"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Settings" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(591, 251)
+position = Vector2(591, 183)
 scale = Vector2(2, 2)
 texture = ExtResource("3_od5tt")
 
 [node name="Menu" parent="CanvasLayer" instance=ExtResource("3_ck6wo")]
 offset_left = 508.0
-offset_top = 323.0
+offset_top = 255.0
 offset_right = 508.104
-offset_bottom = 322.728
+offset_bottom = 254.728
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

@@ -140,6 +140,7 @@ script = ExtResource("1_et4br")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_endji")
+bus = &"Sound Effects"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6txvk")
