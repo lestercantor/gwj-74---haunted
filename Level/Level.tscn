@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://w5vlxb805s64"]
+[gd_scene load_steps=30 format=3 uid="uid://w5vlxb805s64"]
 
 [ext_resource type="Script" path="res://Level/GameplayManager.gd" id="1_2knu4"]
 [ext_resource type="AudioStream" uid="uid://bts3qt2ro4uh" path="res://Art Assets/Audio/strange-lullaby-28691.mp3" id="1_vxbm7"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b8c0dpm7x3yos" path="res://Pause Menu/PauseMenu.tscn" id="6_jm6ne"]
 [ext_resource type="Texture2D" uid="uid://bl8u62w18ljtg" path="res://Art Assets/Backgrounds/GloomySkyBackground.png" id="7_4t3ec"]
 [ext_resource type="Texture2D" uid="uid://hrm4bxxj1278" path="res://Art Assets/Backgrounds/CastleTileset_n.png" id="7_6sv6f"]
+[ext_resource type="Script" path="res://Level/canvas_modulate.gd" id="8_k720x"]
 [ext_resource type="Script" path="res://Art Assets/ArtScripts/CloudMovement.gd" id="8_oeygo"]
 [ext_resource type="Texture2D" uid="uid://ssnyyu2g1vsk" path="res://Art Assets/Backgrounds/RainLayer.png" id="9_pew4v"]
 [ext_resource type="Texture2D" uid="uid://cdhgsucpbbeb8" path="res://Art Assets/Effects/Lamp.png" id="11_mn0ya"]
@@ -191,7 +192,8 @@ visible = false
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2(0, 192)
 scale = Vector2(3, 3)
-color = Color(0.169245, 0.169245, 0.169245, 1)
+color = Color(0.17, 0.17, 0.17, 1)
+script = ExtResource("8_k720x")
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -20

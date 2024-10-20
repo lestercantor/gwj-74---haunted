@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbrgcy6cxhlsv"]
+[gd_scene load_steps=9 format=3 uid="uid://bbrgcy6cxhlsv"]
 
 [ext_resource type="Script" path="res://Art Assets/ArtScripts/AudioSlider.gd" id="1_2yuu7"]
 [ext_resource type="Texture2D" uid="uid://das6fy6abvf4d" path="res://Art Assets/UI/Master.png" id="1_3ahdy"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://bcab12gimgui0" path="res://Art Assets/Fonts/OldLondon.ttf" id="2_vn2nr"]
 [ext_resource type="Texture2D" uid="uid://cgu253nvaxum3" path="res://Art Assets/UI/SFX.png" id="3_5tsul"]
 [ext_resource type="Texture2D" uid="uid://dg8wdw0ilnopv" path="res://Art Assets/UI/Music.png" id="4_c2tdr"]
+[ext_resource type="Script" path="res://Art Assets/ArtScripts/Lightlevel.gd" id="6_08l0y"]
 [ext_resource type="Texture2D" uid="uid://d1shn8jomfi46" path="res://Art Assets/UI/Back.png" id="6_huu3m"]
 
 [node name="Menu" type="Control"]
@@ -21,8 +22,8 @@ script = ExtResource("1_mo7rk")
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 clip_contents = true
 layout_mode = 2
-offset_right = 193.675
-offset_bottom = 300.0
+offset_right = 194.0
+offset_bottom = 408.0
 size_flags_horizontal = 0
 theme_override_constants/separation = 15
 
@@ -69,6 +70,20 @@ step = 0.001
 value = 1.0
 script = ExtResource("1_2yuu7")
 bus_name = "Sound Effects"
+
+[node name="LightLevel" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(0, 277)
+texture = ExtResource("3_5tsul")
+centered = false
+
+[node name="LightLevel" type="HSlider" parent="VBoxContainer/LightLevel"]
+offset_top = 54.0
+offset_right = 188.0
+offset_bottom = 70.0
+max_value = 0.3
+step = 0.01
+value = 0.3
+script = ExtResource("6_08l0y")
 
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 2
