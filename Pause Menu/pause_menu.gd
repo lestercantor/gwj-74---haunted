@@ -16,3 +16,8 @@ func _on_main_menu_pressed() -> void:
 
 func _on_resume_pressed() -> void:
 	get_tree().paused = false
+
+
+func _on_settings_pressed() -> void:
+	$Panel/Menu.show()
+	$Panel/VBoxContainer.hide()

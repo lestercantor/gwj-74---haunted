@@ -1,0 +1,90 @@
+[gd_scene load_steps=8 format=3 uid="uid://bns7omg2r2vi1"]
+
+[ext_resource type="Script" path="res://Art Assets/Art Scenes/pause_settings_ui.gd" id="1_00ikx"]
+[ext_resource type="Texture2D" uid="uid://das6fy6abvf4d" path="res://Art Assets/UI/Master.png" id="2_dcy3o"]
+[ext_resource type="Script" path="res://Art Assets/ArtScripts/AudioSlider.gd" id="3_iu6ki"]
+[ext_resource type="Texture2D" uid="uid://dg8wdw0ilnopv" path="res://Art Assets/UI/Music.png" id="4_u3n1r"]
+[ext_resource type="Texture2D" uid="uid://cgu253nvaxum3" path="res://Art Assets/UI/SFX.png" id="5_uspah"]
+[ext_resource type="FontFile" uid="uid://bcab12gimgui0" path="res://Art Assets/Fonts/OldLondon.ttf" id="8_blton"]
+[ext_resource type="Texture2D" uid="uid://d1shn8jomfi46" path="res://Art Assets/UI/Back.png" id="9_agxbj"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchor_right = 0.098
+anchor_bottom = 0.164
+offset_right = 0.103996
+offset_bottom = -0.272003
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_00ikx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+clip_contents = true
+layout_mode = 2
+offset_right = 194.0
+offset_bottom = 408.0
+size_flags_horizontal = 0
+theme_override_constants/separation = 15
+
+[node name="Master" type="Sprite2D" parent="VBoxContainer"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_dcy3o")
+centered = false
+
+[node name="Master" type="HSlider" parent="VBoxContainer/Master"]
+offset_top = 54.0
+offset_right = 188.0
+offset_bottom = 70.0
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("3_iu6ki")
+bus_name = "Master"
+
+[node name="Music" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(0, 60)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_u3n1r")
+centered = false
+
+[node name="Music" type="HSlider" parent="VBoxContainer/Music"]
+offset_top = 54.0
+offset_right = 188.0
+offset_bottom = 70.0
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("3_iu6ki")
+bus_name = "Music"
+
+[node name="SFX" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(0, 120)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_uspah")
+centered = false
+
+[node name="SFX" type="HSlider" parent="VBoxContainer/SFX"]
+offset_top = 54.0
+offset_right = 188.0
+offset_bottom = 70.0
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("3_iu6ki")
+bus_name = "Sound Effects"
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = -30.0
+offset_top = 203.0
+offset_right = 163.0
+offset_bottom = 261.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("8_blton")
+theme_override_font_sizes/font_size = 50
+icon = ExtResource("9_agxbj")
+flat = true
+alignment = 0
+icon_alignment = 1
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
