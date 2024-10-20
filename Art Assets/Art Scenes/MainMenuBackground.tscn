@@ -7,14 +7,14 @@
 [ext_resource type="Texture2D" uid="uid://8jgj76as3b0p" path="res://Art Assets/Backgrounds/Moon.png" id="2_mq54q"]
 [ext_resource type="Texture2D" uid="uid://bl8u62w18ljtg" path="res://Art Assets/Backgrounds/GloomySkyBackground.png" id="3_v5tdo"]
 [ext_resource type="Texture2D" uid="uid://7ygbx7c156t5" path="res://Art Assets/Backgrounds/ForegroundCloudLayer.png" id="4_1ifbp"]
+[ext_resource type="Texture2D" uid="uid://cavd25m6o80fd" path="res://Art Assets/Backgrounds/CastleDark.png" id="4_tnlus"]
 [ext_resource type="Texture2D" uid="uid://ckmqq1vxtwkhn" path="res://Art Assets/UI/Logo.png" id="5_3g11h"]
 [ext_resource type="Texture2D" uid="uid://ssnyyu2g1vsk" path="res://Art Assets/Backgrounds/RainLayer.png" id="6_m5tty"]
-[ext_resource type="Texture2D" uid="uid://dj4vgm6rxrhvd" path="res://Art Assets/Backgrounds/Castle.png" id="7_iiesl"]
 [ext_resource type="Texture2D" uid="uid://culfpef5hku8e" path="res://Art Assets/Backgrounds/Castle_n.png" id="9_lt13r"]
 [ext_resource type="PackedScene" uid="uid://3ctt5ma2xwd5" path="res://Art Assets/Art Scenes/LightningScene.tscn" id="11_4ecw4"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_txidj"]
-diffuse_texture = ExtResource("7_iiesl")
+diffuse_texture = ExtResource("4_tnlus")
 normal_texture = ExtResource("9_lt13r")
 
 [sub_resource type="Gradient" id="Gradient_d6uue"]

@@ -70,3 +70,6 @@ func player_death() -> void:
 	death = true
 	mouse_light.set_process_mode(4)
 	animated_Sprite.play("Death")
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
+	get_tree().change_scene_to_file("res://Art Assets/Art Scenes/BadEndScene.tscn")

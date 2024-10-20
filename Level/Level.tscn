@@ -208,11 +208,12 @@ layer_1/tile_data = PackedInt32Array(1310699, 458752, 65536, 1310700, 458752, 65
 [node name="ParallaxBackground" type="ParallaxBackground" parent="TileMap"]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="TileMap/ParallaxBackground"]
+position = Vector2(-526, 125)
+scale = Vector2(10, 10)
+motion_mirroring = Vector2(640, 0)
 
 [node name="GloomySkyBackground" type="Sprite2D" parent="TileMap/ParallaxBackground/ParallaxLayer"]
 z_index = -11
-position = Vector2(170, -230)
-scale = Vector2(10, 10)
 texture = ExtResource("7_4t3ec")
 
 [node name="RainLayer1" type="ParallaxLayer" parent="TileMap/ParallaxBackground"]

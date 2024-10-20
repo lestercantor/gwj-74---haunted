@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://7v6r8qqqk45l" path="res://Art Assets/UI/BadEnd.png" id="6_e31jw"]
 [ext_resource type="Texture2D" uid="uid://bl8u62w18ljtg" path="res://Art Assets/Backgrounds/GloomySkyBackground.png" id="6_tkgst"]
 [ext_resource type="Texture2D" uid="uid://8jgj76as3b0p" path="res://Art Assets/Backgrounds/Moon.png" id="7_s56w2"]
-[ext_resource type="Texture2D" uid="uid://dj4vgm6rxrhvd" path="res://Art Assets/Backgrounds/Castle.png" id="8_f8p7f"]
 [ext_resource type="Texture2D" uid="uid://ssnyyu2g1vsk" path="res://Art Assets/Backgrounds/RainLayer.png" id="9_2mg1y"]
+[ext_resource type="Texture2D" uid="uid://cavd25m6o80fd" path="res://Art Assets/Backgrounds/CastleDark.png" id="9_t00ul"]
 [ext_resource type="Texture2D" uid="uid://c812ta53mrq0m" path="res://Art Assets/UI/BadEnd text.png" id="11_v0twk"]
 
 [node name="Node2D" type="Node2D"]
@@ -77,7 +77,7 @@ texture = ExtResource("7_s56w2")
 [node name="Castle" type="Sprite2D" parent="ParallaxBackground/SkyLayer"]
 position = Vector2(640, 360)
 scale = Vector2(2, 2)
-texture = ExtResource("8_f8p7f")
+texture = ExtResource("9_t00ul")
 
 [node name="RainLayer1" type="ParallaxLayer" parent="ParallaxBackground"]
 z_index = 1
