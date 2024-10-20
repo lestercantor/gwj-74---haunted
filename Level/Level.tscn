@@ -1,5 +1,6 @@
-[gd_scene load_steps=27 format=3 uid="uid://w5vlxb805s64"]
+[gd_scene load_steps=29 format=3 uid="uid://w5vlxb805s64"]
 
+[ext_resource type="Script" path="res://Level/GameplayManager.gd" id="1_2knu4"]
 [ext_resource type="AudioStream" uid="uid://bts3qt2ro4uh" path="res://Art Assets/Audio/strange-lullaby-28691.mp3" id="1_vxbm7"]
 [ext_resource type="Texture2D" uid="uid://c8t1q4rqsnjk6" path="res://Art Assets/UI/MatchStickUIUnder.png" id="2_ftfeo"]
 [ext_resource type="PackedScene" uid="uid://hhnak10g0byc" path="res://Player/player.tscn" id="2_othsh"]
@@ -9,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://l54khree1rmq" path="res://Art Assets/UI/MatchStickUIFlame.png" id="4_uggvw"]
 [ext_resource type="PackedScene" uid="uid://b6j7qu0ii6054" path="res://Paintings/painting.tscn" id="5_npcdf"]
 [ext_resource type="Texture2D" uid="uid://doisbj5fapdwv" path="res://Art Assets/Backgrounds/CastleTileset.png" id="6_dte6f"]
+[ext_resource type="PackedScene" uid="uid://b8c0dpm7x3yos" path="res://Pause Menu/PauseMenu.tscn" id="6_jm6ne"]
 [ext_resource type="Texture2D" uid="uid://bl8u62w18ljtg" path="res://Art Assets/Backgrounds/GloomySkyBackground.png" id="7_4t3ec"]
 [ext_resource type="Texture2D" uid="uid://hrm4bxxj1278" path="res://Art Assets/Backgrounds/CastleTileset_n.png" id="7_6sv6f"]
 [ext_resource type="Script" path="res://Art Assets/ArtScripts/CloudMovement.gd" id="8_oeygo"]
@@ -140,6 +142,10 @@ fill_to = Vector2(1, 0.0641026)
 
 [node name="Node2D" type="Node2D"]
 
+[node name="GameplayManager" type="Node" parent="."]
+process_mode = 3
+script = ExtResource("1_2knu4")
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_vxbm7")
 pitch_scale = 0.25
@@ -166,6 +172,10 @@ editable = false
 scrollable = false
 script = ExtResource("4_3me54")
 player = NodePath("../../Player")
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("6_jm6ne")]
+process_mode = 2
+visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
