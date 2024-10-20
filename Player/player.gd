@@ -10,6 +10,8 @@ var cursor = preload("res://Art Assets/UI/MatchstickOff.png")
 @onready var mouse_light: MouseLight = $MouseLight
 @onready var death_area_2d: Area2D = $DeathArea2D
 
+var death: bool = false
+
 func _ready() -> void:
 	# Connect to signal from Area2D node when player death area has overlapped with the enemy
 	death_area_2d.body_entered.connect(enemy_collision)
@@ -17,24 +19,25 @@ func _ready() -> void:
 	Input.set_custom_mouse_cursor(cursor)
 	
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+	if !death:
+		# Add the gravity.
+		if not is_on_floor():
+			velocity += get_gravity() * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		# Handle jump.
+		if Input.is_action_just_pressed("jump") and is_on_floor():
+			velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	var direction: float = Input.get_axis("move_left", "move_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		# Get the input direction and handle the movement/deceleration.
+		var direction: float = Input.get_axis("move_left", "move_right")
+		if direction:
+			velocity.x = direction * SPEED
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
 
-	move_and_slide()
-	handle_movement_animation(direction)
-	GlobalSignals.player_position.emit(global_position)
+		move_and_slide()
+		handle_movement_animation(direction)
+		GlobalSignals.player_position.emit(global_position)
 	
 # Call function when player has collided with enemy
 func enemy_collision(enemy: Enemy) -> void:
@@ -46,6 +49,7 @@ func death_collision(death_area: Area2D) -> void:
 	pass
 	
 func handle_movement_animation(direction) -> void:
+	if !death:
 		if !velocity.x:
 			animated_Sprite.play("Idle")
 		if velocity.x:
@@ -59,4 +63,5 @@ func toggle_flip_sprite(direction) -> void:
 
 func player_death() -> void:
 	print("player died")
+	death = true
 	animated_Sprite.play("Death")
