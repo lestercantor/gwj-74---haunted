@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://7ygbx7c156t5" path="res://Art Assets/Backgrounds/ForegroundCloudLayer.png" id="6_ttxbn"]
 [ext_resource type="Texture2D" uid="uid://bl8u62w18ljtg" path="res://Art Assets/Backgrounds/GloomySkyBackground.png" id="7_cv747"]
 [ext_resource type="Texture2D" uid="uid://8jgj76as3b0p" path="res://Art Assets/Backgrounds/Moon.png" id="8_bu36u"]
-[ext_resource type="Texture2D" uid="uid://dj4vgm6rxrhvd" path="res://Art Assets/Backgrounds/Castle.png" id="9_e7qx3"]
+[ext_resource type="Texture2D" uid="uid://cavd25m6o80fd" path="res://Art Assets/Backgrounds/CastleDark.png" id="9_x0562"]
 [ext_resource type="Texture2D" uid="uid://ssnyyu2g1vsk" path="res://Art Assets/Backgrounds/RainLayer.png" id="10_y1ct8"]
 
 [node name="Node2D" type="Node2D"]
@@ -76,7 +76,7 @@ texture = ExtResource("8_bu36u")
 [node name="Castle" type="Sprite2D" parent="ParallaxBackground/SkyLayer"]
 position = Vector2(640, 360)
 scale = Vector2(2, 2)
-texture = ExtResource("9_e7qx3")
+texture = ExtResource("9_x0562")
 
 [node name="RainLayer1" type="ParallaxLayer" parent="ParallaxBackground"]
 z_index = 1
