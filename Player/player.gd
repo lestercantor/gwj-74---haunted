@@ -15,7 +15,6 @@ func _ready() -> void:
 	death_area_2d.body_entered.connect(enemy_collision)
 	death_area_2d.area_entered.connect(death_collision)
 	Input.set_custom_mouse_cursor(cursor)
-	Input.warp_mouse(global_position)
 	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
