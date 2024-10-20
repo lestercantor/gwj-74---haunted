@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GWJ 74 - Haunted"
-run/main_scene="res://Level/Level.tscn"
+run/main_scene="res://Art Assets/Art Scenes/MainMenuBackground.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 config/custom_image=""
@@ -19,12 +19,14 @@ config/custom_image=""
 [autoload]
 
 GlobalSignals="*res://Globals/GlobalSignals.gd"
+GlobalCounter="*res://Globals/GlobalCounter.gd"
 TransitionScreen="*res://Globals/transition_screen.tscn"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/mode=3
 window/stretch/mode="viewport"
 <<<<<<<HEADwindow/stretch/mode="viewport"
 
