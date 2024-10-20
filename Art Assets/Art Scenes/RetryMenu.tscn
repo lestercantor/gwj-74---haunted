@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://po6kuttq13t0"]
+
+[ext_resource type="Script" path="res://Art Assets/Art Scenes/retry_menu.gd" id="1_ptm7f"]
+[ext_resource type="FontFile" uid="uid://bcab12gimgui0" path="res://Art Assets/Fonts/OldLondon.ttf" id="2_61763"]
+[ext_resource type="Texture2D" uid="uid://bbyq6et0s67y4" path="res://Art Assets/UI/Retry.png" id="3_ukb5j"]
+[ext_resource type="Texture2D" uid="uid://d1shn8jomfi46" path="res://Art Assets/UI/Back.png" id="4_dmc1n"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchor_right = 0.098
+anchor_bottom = 0.164
+offset_right = 0.103996
+offset_bottom = -0.272003
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ptm7f")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+clip_contents = true
+layout_mode = 2
+offset_right = 188.0
+offset_bottom = 137.0
+size_flags_horizontal = 0
+theme_override_constants/separation = 15
+
+[node name="RestartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_61763")
+theme_override_font_sizes/font_size = 50
+icon = ExtResource("3_ukb5j")
+flat = true
+alignment = 0
+icon_alignment = 1
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_61763")
+theme_override_font_sizes/font_size = 50
+icon = ExtResource("4_dmc1n")
+flat = true
+alignment = 0
+icon_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -1,7 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://brw1cg86snypr"]
+[gd_scene load_steps=11 format=3 uid="uid://brw1cg86snypr"]
 
-[ext_resource type="PackedScene" uid="uid://bpdn4qiyiuosk" path="res://Art Assets/Art Scenes/Mainmenu.tscn" id="2_sx4dv"]
+[ext_resource type="AudioStream" uid="uid://eknxyvso8byw" path="res://Art Assets/Audio/mixkit-birds-in-forest-loop-1239.wav" id="1_chx4y"]
+[ext_resource type="AudioStream" uid="uid://njec3hyx8hns" path="res://Art Assets/Audio/Spring In My Step [ ezmp3.cc ].mp3" id="2_a035t"]
+[ext_resource type="PackedScene" uid="uid://po6kuttq13t0" path="res://Art Assets/Art Scenes/RetryMenu.tscn" id="3_odq04"]
 [ext_resource type="Texture2D" uid="uid://df57xgo28c45q" path="res://Art Assets/UI/GoodEnd.png" id="3_urnpd"]
+[ext_resource type="Texture2D" uid="uid://c8uucqpwm55ys" path="res://Art Assets/UI/GoodEndText.png" id="4_0gy1n"]
 [ext_resource type="Script" path="res://Art Assets/ArtScripts/CloudMovement.gd" id="4_hjvmm"]
 [ext_resource type="Texture2D" uid="uid://cyfgmgpc35qdk" path="res://Art Assets/Backgrounds/HighCloudLayerLight.png" id="5_3fskd"]
 [ext_resource type="Texture2D" uid="uid://7ygbx7c156t5" path="res://Art Assets/Backgrounds/ForegroundCloudLayer.png" id="6_m4nra"]
@@ -10,22 +13,35 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Birds" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_chx4y")
+volume_db = -25.0
+autoplay = true
+bus = &"Sound Effects"
 
-[node name="Menu" parent="CanvasLayer" instance=ExtResource("2_sx4dv")]
-custom_minimum_size = Vector2(250, 250)
-anchor_left = 0.046
-anchor_right = 0.164
-anchor_bottom = 0.673
-offset_left = 436.12
-offset_top = 351.0
-offset_right = 535.08
-offset_bottom = 116.44
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_a035t")
+volume_db = -25.0
+autoplay = true
+bus = &"Music"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GoodEnd" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(591, 292)
 scale = Vector2(2, 2)
 texture = ExtResource("3_urnpd")
+
+[node name="Menu2" parent="CanvasLayer" instance=ExtResource("3_odq04")]
+offset_left = 511.0
+offset_top = 379.0
+offset_right = 511.104
+offset_bottom = 378.728
+
+[node name="GoodEndText" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(598, 354)
+scale = Vector2(2, 2)
+texture = ExtResource("4_0gy1n")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

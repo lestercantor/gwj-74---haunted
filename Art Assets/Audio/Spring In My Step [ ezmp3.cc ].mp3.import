@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://njec3hyx8hns"
+path="res://.godot/imported/Spring In My Step [ ezmp3.cc ].mp3-7b1beb9b88cef3da3bfa25e872ffea2e.mp3str"
+
+[deps]
+
+source_file="res://Art Assets/Audio/Spring In My Step [ ezmp3.cc ].mp3"
+dest_files=["res://.godot/imported/Spring In My Step [ ezmp3.cc ].mp3-7b1beb9b88cef3da3bfa25e872ffea2e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

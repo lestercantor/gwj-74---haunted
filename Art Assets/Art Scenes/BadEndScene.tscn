@@ -1,8 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://db7t6y7agrrgj"]
+[gd_scene load_steps=12 format=3 uid="uid://db7t6y7agrrgj"]
 
 [ext_resource type="AudioStream" uid="uid://cmfu28uuswd7y" path="res://Art Assets/Audio/RainLoop.wav" id="1_jm6l8"]
-[ext_resource type="PackedScene" uid="uid://bpdn4qiyiuosk" path="res://Art Assets/Art Scenes/Mainmenu.tscn" id="2_eu87b"]
 [ext_resource type="Script" path="res://Art Assets/ArtScripts/CloudMovement.gd" id="3_25us4"]
+[ext_resource type="PackedScene" uid="uid://po6kuttq13t0" path="res://Art Assets/Art Scenes/RetryMenu.tscn" id="3_gjp3e"]
 [ext_resource type="Texture2D" uid="uid://bjeonby6l21pm" path="res://Art Assets/Backgrounds/HighCloudLayer.png" id="4_wti6e"]
 [ext_resource type="Texture2D" uid="uid://7ygbx7c156t5" path="res://Art Assets/Backgrounds/ForegroundCloudLayer.png" id="5_wjb66"]
 [ext_resource type="Texture2D" uid="uid://7v6r8qqqk45l" path="res://Art Assets/UI/BadEnd.png" id="6_e31jw"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://8jgj76as3b0p" path="res://Art Assets/Backgrounds/Moon.png" id="7_s56w2"]
 [ext_resource type="Texture2D" uid="uid://dj4vgm6rxrhvd" path="res://Art Assets/Backgrounds/Castle.png" id="8_f8p7f"]
 [ext_resource type="Texture2D" uid="uid://ssnyyu2g1vsk" path="res://Art Assets/Backgrounds/RainLayer.png" id="9_2mg1y"]
+[ext_resource type="Texture2D" uid="uid://c812ta53mrq0m" path="res://Art Assets/UI/BadEnd text.png" id="11_v0twk"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -17,23 +18,20 @@
 stream = ExtResource("1_jm6l8")
 volume_db = -25.0
 autoplay = true
+bus = &"Sound Effects"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Menu" parent="CanvasLayer" instance=ExtResource("2_eu87b")]
-custom_minimum_size = Vector2(250, 250)
-anchor_left = 0.046
-anchor_right = 0.164
-anchor_bottom = 0.673
-offset_left = 436.12
-offset_top = 351.0
-offset_right = 535.08
-offset_bottom = 116.44
-
 [node name="BadEnd" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(591, 292)
+position = Vector2(623, 258)
 scale = Vector2(2, 2)
 texture = ExtResource("6_e31jw")
+
+[node name="Menu2" parent="CanvasLayer" instance=ExtResource("3_gjp3e")]
+offset_left = 523.0
+offset_top = 366.0
+offset_right = 523.104
+offset_bottom = 365.728
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -94,3 +92,8 @@ position = Vector2(576, 324)
 scale = Vector2(1.8, 1.8)
 skew = -0.349066
 texture = ExtResource("9_2mg1y")
+
+[node name="BadEndText" type="Sprite2D" parent="."]
+position = Vector2(626, 320)
+scale = Vector2(2, 2)
+texture = ExtResource("11_v0twk")
