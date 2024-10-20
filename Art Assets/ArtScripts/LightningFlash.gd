@@ -2,6 +2,7 @@ extends Node2D
 
 @export var TimerLength: float =  0
 
+
 func _ready() -> void:
 	$PointLight2D.hide()
 	randomize()

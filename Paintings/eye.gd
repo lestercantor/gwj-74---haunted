@@ -5,7 +5,7 @@ extends AnimatedSprite2D
 @export var max_distance = 4.5
 var player_position: Vector2 = Vector2.ZERO
 
-func _ready() -> void:
+func _ready() -> void:	
 	GlobalSignals.player_position.connect(track_player)
 	
 func _process(_delta: float) -> void:
@@ -16,3 +16,10 @@ func _process(_delta: float) -> void:
 
 func track_player(player_pos: Vector2):
 	player_position = player_pos
+	
+	
+func _on_timer_timeout() -> void:
+	$Pupil.hide()
+	self.play("Blink")
+	await get_tree().create_timer(.5).timeout
+	$Pupil.show()

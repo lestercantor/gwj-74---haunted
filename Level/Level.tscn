@@ -374,6 +374,9 @@ position = Vector2(19, -27.25)
 [node name="Eyes2" parent="." instance=ExtResource("18_d6rqk")]
 position = Vector2(-15, 360)
 
+[node name="Eyes26" parent="." instance=ExtResource("18_d6rqk")]
+position = Vector2(-449, 940)
+
 [node name="Eyes3" parent="." instance=ExtResource("18_d6rqk")]
 position = Vector2(1, 370)
 
