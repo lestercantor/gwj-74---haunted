@@ -13,6 +13,7 @@ extends Node2D
 			
 			get_tree().current_scene.add_child(burned)
 			GlobalSignals.painting_counter.emit(-1)
+			GlobalSignals.painting_burned.emit()
 			queue_free()
 
 func _ready() -> void:

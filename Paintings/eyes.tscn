@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4lowjnv5s7aa"]
+[gd_scene load_steps=9 format=3 uid="uid://c4lowjnv5s7aa"]
 
+[ext_resource type="Script" path="res://Paintings/eye_parent.gd" id="1_dvfek"]
 [ext_resource type="Texture2D" uid="uid://dip5c4vjqo0uw" path="res://Art Assets/Paintings/Eyes-Sheet.png" id="1_ngxyj"]
 [ext_resource type="Script" path="res://Paintings/eye.gd" id="2_nhh4i"]
 [ext_resource type="Texture2D" uid="uid://cbvtxe1o7pkaa" path="res://Art Assets/Paintings/EyePupil.png" id="3_pybti"]
@@ -30,6 +31,7 @@ animations = [{
 }]
 
 [node name="Eyes" type="Node2D"]
+script = ExtResource("1_dvfek")
 
 [node name="SightArea" type="Area2D" parent="."]
 collision_layer = 4
