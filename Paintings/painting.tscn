@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6j7qu0ii6054"]
+[gd_scene load_steps=10 format=3 uid="uid://b6j7qu0ii6054"]
 
 [ext_resource type="Script" path="res://Paintings/painting.gd" id="1_psx43"]
 [ext_resource type="Texture2D" uid="uid://bmgfwcam6h7jp" path="res://Art Assets/Paintings/PaintingFrame.png" id="1_vnq1p"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://btqubnrk5a7k6" path="res://Art Assets/Paintings/PaintingFrame_n.png" id="2_aqqrq"]
 [ext_resource type="Script" path="res://burnable_area.gd" id="2_uyf1w"]
 [ext_resource type="Texture2D" uid="uid://btu0mshq5gwnm" path="res://Art Assets/Paintings/PaintingBackground01.png" id="3_f6cnm"]
+[ext_resource type="PackedScene" uid="uid://c4lowjnv5s7aa" path="res://Paintings/eyes.tscn" id="7_3mhag"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_joabk"]
 size = Vector2(44, 102)
@@ -32,6 +33,26 @@ texture = SubResource("CanvasTexture_gg4x7")
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 z_index = -1
 texture = ExtResource("3_f6cnm")
+
+[node name="Eyes2" parent="." instance=ExtResource("7_3mhag")]
+position = Vector2(10, -38)
+scale = Vector2(2, 2)
+
+[node name="Eyes3" parent="." instance=ExtResource("7_3mhag")]
+position = Vector2(-14, -43)
+
+[node name="Eyes4" parent="." instance=ExtResource("7_3mhag")]
+position = Vector2(9, 30)
+
+[node name="Eyes5" parent="." instance=ExtResource("7_3mhag")]
+position = Vector2(15, 47)
+
+[node name="Eyes6" parent="." instance=ExtResource("7_3mhag")]
+position = Vector2(-11, -7)
+scale = Vector2(2, 2)
+
+[node name="Eyes" parent="." instance=ExtResource("7_3mhag")]
+position = Vector2(-18, 28)
 
 [connection signal="area_entered" from="BurnableArea" to="BurnableArea" method="_on_area_entered"]
 [connection signal="area_exited" from="BurnableArea" to="BurnableArea" method="_on_area_exited"]

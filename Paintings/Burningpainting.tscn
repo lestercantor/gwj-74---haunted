@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://c6ukj0fwqxd8u"]
+[gd_scene load_steps=16 format=3 uid="uid://c6ukj0fwqxd8u"]
 
 [ext_resource type="Texture2D" uid="uid://bmgfwcam6h7jp" path="res://Art Assets/Paintings/PaintingFrame.png" id="3_iof0y"]
 [ext_resource type="Texture2D" uid="uid://btqubnrk5a7k6" path="res://Art Assets/Paintings/PaintingFrame_n.png" id="4_j5jfs"]
 [ext_resource type="PackedScene" uid="uid://dv3ar7phxso0e" path="res://Paintings/painting_embers_particles.tscn" id="5_cy8bt"]
 [ext_resource type="Texture2D" uid="uid://btu0mshq5gwnm" path="res://Art Assets/Paintings/PaintingBackground01.png" id="5_wsu26"]
 [ext_resource type="Texture2D" uid="uid://btoeajhsr20ox" path="res://Art Assets/Effects/PaintingBurning-Sheet.png" id="6_jaqf5"]
+[ext_resource type="Texture2D" uid="uid://dh62lpisn0gmr" path="res://Art Assets/Paintings/EyesShut2.png" id="6_rba50"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_gg4x7"]
 diffuse_texture = ExtResource("3_iof0y")
@@ -85,6 +86,33 @@ texture_scale = 9.3
 [node name="PaintingParticles" parent="." instance=ExtResource("5_cy8bt")]
 z_index = -1
 position = Vector2(-2, 10)
+
+[node name="EyesShut3" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-18, 28)
+texture = ExtResource("6_rba50")
+
+[node name="EyesShut5" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(9, 30)
+texture = ExtResource("6_rba50")
+
+[node name="EyesShut4" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-11, -7)
+scale = Vector2(2, 2)
+texture = ExtResource("6_rba50")
+
+[node name="EyesShut6" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(10, -38)
+scale = Vector2(2, 2)
+texture = ExtResource("6_rba50")
+
+[node name="EyesShut2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-14, -43)
+texture = ExtResource("6_rba50")
 
 [node name="BurnArea" type="Area2D" parent="."]
 collision_layer = 16
