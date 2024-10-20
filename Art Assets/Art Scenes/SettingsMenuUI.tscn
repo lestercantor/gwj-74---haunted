@@ -53,7 +53,7 @@ max_value = 1.0
 step = 0.001
 value = 1.0
 script = ExtResource("1_2yuu7")
-bus_name = "Music/Ambience"
+bus_name = "Music"
 
 [node name="SFX" type="Sprite2D" parent="VBoxContainer"]
 position = Vector2(0, 200)
