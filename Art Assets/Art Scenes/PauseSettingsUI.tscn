@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bns7omg2r2vi1"]
+[gd_scene load_steps=8 format=3 uid="uid://u81woi1dux04"]
 
 [ext_resource type="Script" path="res://Art Assets/Art Scenes/pause_settings_ui.gd" id="1_00ikx"]
 [ext_resource type="Texture2D" uid="uid://das6fy6abvf4d" path="res://Art Assets/UI/Master.png" id="2_dcy3o"]
