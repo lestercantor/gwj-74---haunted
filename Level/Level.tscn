@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://w5vlxb805s64"]
+[gd_scene load_steps=27 format=3 uid="uid://w5vlxb805s64"]
 
 [ext_resource type="AudioStream" uid="uid://bts3qt2ro4uh" path="res://Art Assets/Audio/strange-lullaby-28691.mp3" id="1_vxbm7"]
 [ext_resource type="Texture2D" uid="uid://c8t1q4rqsnjk6" path="res://Art Assets/UI/MatchStickUIUnder.png" id="2_ftfeo"]
@@ -17,6 +17,7 @@
 [ext_resource type="FontFile" uid="uid://c0bmbsccpjaur" path="res://Art Assets/Fonts/BLOODY.TTF" id="12_bwoua"]
 [ext_resource type="Texture2D" uid="uid://dmwpf7hjvn1gc" path="res://Art Assets/Backgrounds/Portcullis.png" id="15_stty6"]
 [ext_resource type="PackedScene" uid="uid://dplht22w37uey" path="res://Level/Exit_Area.tscn" id="17_bl76b"]
+[ext_resource type="PackedScene" uid="uid://c4lowjnv5s7aa" path="res://Paintings/eyes.tscn" id="18_d6rqk"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k111t"]
 content_margin_bottom = 16.0
@@ -356,6 +357,11 @@ texture = ExtResource("15_stty6")
 position = Vector2(2293, 970)
 
 [node name="CollisionShape2D" parent="ExitArea" index="0"]
-position = Vector2(-2720, 8)
+position = Vector2(-2215, -10)
+
+[node name="Eyes" parent="ExitArea/CollisionShape2D" index="0" instance=ExtResource("18_d6rqk")]
+
+[node name="Eyes" parent="." instance=ExtResource("18_d6rqk")]
+position = Vector2(-565, 845)
 
 [editable path="ExitArea"]

@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Level/exit_area.gd" id="1_c1ptp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h1ndm"]
+size = Vector2(69, 49)
 
 [node name="ExitArea" type="Area2D"]
 collision_layer = 0

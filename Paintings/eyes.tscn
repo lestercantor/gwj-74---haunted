@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4lowjnv5s7aa"]
+
+[ext_resource type="Texture2D" uid="uid://bbqy2uy1iksg6" path="res://Art Assets/Paintings/EyesWhite.png" id="1_si0i1"]
+[ext_resource type="Script" path="res://Paintings/eye.gd" id="2_nhh4i"]
+[ext_resource type="Texture2D" uid="uid://cbvtxe1o7pkaa" path="res://Art Assets/Paintings/EyePupil.png" id="3_pybti"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6tio4"]
+radius = 51.0
+
+[node name="Eyes" type="Node2D"]
+
+[node name="SightArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SightArea"]
+shape = SubResource("CircleShape2D_6tio4")
+
+[node name="Eye" type="Sprite2D" parent="."]
+texture = ExtResource("1_si0i1")
+script = ExtResource("2_nhh4i")
+
+[node name="Pupil" type="Sprite2D" parent="Eye"]
+texture = ExtResource("3_pybti")

@@ -13,6 +13,7 @@ var cursor = preload("res://Art Assets/UI/MatchstickOff.png")
 func _ready() -> void:
 	# Connect to signal from Area2D node when player death area has overlapped with the enemy
 	death_area_2d.body_entered.connect(enemy_collision)
+	death_area_2d.area_entered.connect(death_collision)
 	Input.set_custom_mouse_cursor(cursor)
 	Input.warp_mouse(global_position)
 	
@@ -34,12 +35,16 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	handle_movement_animation(direction)
+	GlobalSignals.player_position.emit(global_position)
 	
 # Call function when player has collided with enemy
 func enemy_collision(enemy: Enemy) -> void:
 	if not enemy is Enemy: return
-	print("player got killed by enemy")
+	player_death()
 	
+# Call function when player is within range of death area
+func death_collision(death_area: Area2D) -> void:
+	player_death()
 	
 func handle_movement_animation(direction) -> void:
 		if !velocity.x:
@@ -49,7 +54,9 @@ func handle_movement_animation(direction) -> void:
 			toggle_flip_sprite(direction)
 		if !is_on_floor():
 			animated_Sprite.play("Jump")
-
 			
 func toggle_flip_sprite(direction) -> void:
 	animated_Sprite.flip_h = direction < 0 
+
+func player_death() -> void:
+	print("player died")
