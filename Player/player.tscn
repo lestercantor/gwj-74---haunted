@@ -113,7 +113,7 @@ fill_to = Vector2(0, 0)
 radius = 11.5109
 
 [node name="Player" type="CharacterBody2D"]
-scale = Vector2(2.01805, 2)
+scale = Vector2(1.75, 1.75)
 collision_layer = 2
 collision_mask = 5
 floor_constant_speed = true

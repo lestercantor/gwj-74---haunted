@@ -53,6 +53,7 @@ scale = Vector2(0.5, 0.5)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_bh1n1")
+volume_db = -25.0
 autoplay = true
 bus = &"Sound Effects"
 

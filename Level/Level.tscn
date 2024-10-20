@@ -120,7 +120,7 @@ texture = SubResource("CanvasTexture_murc1")
 5:3/1/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
 7:2/next_alternative_id = 2
 7:2/0 = 0
-7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -8, -6.75, -8, 8, 8)
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -8, 8, 8)
 8:2/next_alternative_id = 2
 8:2/0 = 0
 8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8)
@@ -140,7 +140,7 @@ fill = 1
 fill_from = Vector2(0.504274, 0.512821)
 fill_to = Vector2(1, 0.0641026)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="GameplayManager" type="Node" parent="."]
 process_mode = 3
@@ -148,6 +148,7 @@ script = ExtResource("1_2knu4")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_vxbm7")
+volume_db = -25.0
 pitch_scale = 0.25
 autoplay = true
 bus = &"Music/Ambience"
@@ -178,10 +179,9 @@ process_mode = 2
 visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 position = Vector2(0, 192)
 scale = Vector2(3, 3)
-color = Color(0.0768358, 0.0768358, 0.0768358, 1)
+color = Color(0.169245, 0.169245, 0.169245, 1)
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -20
