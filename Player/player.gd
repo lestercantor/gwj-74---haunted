@@ -1,8 +1,9 @@
 extends CharacterBody2D
 class_name Player
 
-const SPEED: float = 200.0
-const JUMP_VELOCITY: float = -510.0
+@export var SPEED: float = 200.0
+@export var MAX_SPEED: float = 200.0
+@export var JUMP_VELOCITY: float = -510.0
 
 var cursor = preload("res://Art Assets/UI/MatchstickOff.png")
 
@@ -15,15 +16,16 @@ var death: bool = false
 func _ready() -> void:
 	# Connect to signal from Area2D node when player death area has overlapped with the enemy
 	death_area_2d.body_entered.connect(enemy_collision)
-	death_area_2d.area_entered.connect(death_collision)
+	death_area_2d.area_entered.connect(inside_eye_collision)
+	death_area_2d.area_exited.connect(outside_eye_collision)
 	Input.set_custom_mouse_cursor(cursor)
 	
 func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+		
 	if !death:
-		# Add the gravity.
-		if not is_on_floor():
-			velocity += get_gravity() * delta
-
 		# Handle jump.
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
@@ -35,18 +37,20 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
-		move_and_slide()
 		handle_movement_animation(direction)
 		GlobalSignals.player_position.emit(global_position)
-	
+	move_and_slide()
 # Call function when player has collided with enemy
 func enemy_collision(enemy: Enemy) -> void:
 	if not enemy is Enemy: return
 	player_death()
 	
 # Call function when player is within range of death area
-func death_collision(death_area: Area2D) -> void:
-	pass
+func inside_eye_collision(_area: Area2D) -> void:
+	SPEED = MAX_SPEED * 0.85
+	
+func outside_eye_collision(_area: Area2D) -> void:
+	SPEED = MAX_SPEED
 	
 func handle_movement_animation(direction) -> void:
 	if !death:

@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var collision_shape_2d: CollisionShape2D = $SightArea/CollisionShape2D
 @onready var animation: AnimationPlayer = $SightArea/AnimationPlayer
+@onready var timer: Timer = $Timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,7 +10,10 @@ func _ready() -> void:
 
 func disable_collision() -> void:
 	collision_shape_2d.disabled = true
-
+	timer.stop()
+	$SightArea/EyeWhite.frame = 1
+	$SightArea/EyeWhite/Pupil.visible = false
+	
 func random_blink() -> void:
 	if random_number():
 		animation.play("blink")
