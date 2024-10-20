@@ -11,7 +11,7 @@ extends Node2D
 			burned.global_position = global_position
 			burned.global_rotation = global_rotation
 			
-			get_tree().root.add_child(burned)
+			get_tree().current_scene.add_child(burned)
 			GlobalSignals.painting_counter.emit(-1)
 			queue_free()
 

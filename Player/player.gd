@@ -15,7 +15,6 @@ func _ready() -> void:
 	death_area_2d.body_entered.connect(enemy_collision)
 	death_area_2d.area_entered.connect(death_collision)
 	Input.set_custom_mouse_cursor(cursor)
-	Input.warp_mouse(global_position)
 	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -44,7 +43,7 @@ func enemy_collision(enemy: Enemy) -> void:
 	
 # Call function when player is within range of death area
 func death_collision(death_area: Area2D) -> void:
-	player_death()
+	pass
 	
 func handle_movement_animation(direction) -> void:
 		if !velocity.x:

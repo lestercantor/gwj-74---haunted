@@ -40,8 +40,6 @@ func _physics_process(delta: float) -> void:
 
 func on_burning() -> void:
 	SPEED = MAX_SPEED * 0.75
-	print(SPEED)
 
 func on_stopped_burning() -> void:
 	SPEED = MAX_SPEED
-	print(SPEED)

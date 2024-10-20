@@ -365,8 +365,9 @@ position = Vector2(2310, 936)
 scale = Vector2(2, 2)
 texture = ExtResource("15_stty6")
 
-[node name="ExitArea" parent="." instance=ExtResource("17_bl76b")]
+[node name="ExitArea" parent="." node_paths=PackedStringArray("game_manager") instance=ExtResource("17_bl76b")]
 position = Vector2(2293, 970)
+game_manager = NodePath("../GameplayManager")
 
 [node name="CollisionShape2D" parent="ExitArea" index="0"]
 position = Vector2(19, -27.25)

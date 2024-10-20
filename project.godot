@@ -19,7 +19,6 @@ config/custom_image=""
 [autoload]
 
 GlobalSignals="*res://Globals/GlobalSignals.gd"
-GlobalCounter="*res://Globals/GlobalCounter.gd"
 
 [display]
 
