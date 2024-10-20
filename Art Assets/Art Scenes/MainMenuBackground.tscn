@@ -29,6 +29,24 @@ fill_to = Vector2(0.905983, 0.111111)
 
 [node name="Node2D2" type="Node2D"]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Menu" parent="CanvasLayer" instance=ExtResource("1_0liqq")]
+custom_minimum_size = Vector2(250, 250)
+anchor_left = 0.046
+anchor_right = 0.164
+anchor_bottom = 0.673
+offset_left = 82.12
+offset_top = 317.0
+offset_right = 181.08
+offset_bottom = 82.44
+
+[node name="Logo" type="Sprite2D" parent="CanvasLayer"]
+z_index = 1
+position = Vector2(251, 249)
+scale = Vector2(2, 2)
+texture = ExtResource("5_3g11h")
+
 [node name="GloomySkyBackground" type="Sprite2D" parent="."]
 z_index = -11
 position = Vector2(640, 360)
@@ -54,24 +72,6 @@ stream = ExtResource("1_bh1n1")
 volume_db = -25.0
 autoplay = true
 bus = &"Sound Effects"
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Menu" parent="CanvasLayer" instance=ExtResource("1_0liqq")]
-custom_minimum_size = Vector2(250, 250)
-anchor_left = 0.046
-anchor_right = 0.164
-anchor_bottom = 0.673
-offset_left = 82.12
-offset_top = 317.0
-offset_right = 181.08
-offset_bottom = 82.44
-
-[node name="Logo" type="Sprite2D" parent="CanvasLayer"]
-z_index = 1
-position = Vector2(251, 249)
-scale = Vector2(2, 2)
-texture = ExtResource("5_3g11h")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = 3
