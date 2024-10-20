@@ -64,4 +64,5 @@ func toggle_flip_sprite(direction) -> void:
 func player_death() -> void:
 	print("player died")
 	death = true
+	mouse_light.set_process_mode(4)
 	animated_Sprite.play("Death")
